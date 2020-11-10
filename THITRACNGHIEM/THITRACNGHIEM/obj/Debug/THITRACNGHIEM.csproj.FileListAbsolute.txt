@@ -91,3 +91,10 @@ E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.cs
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.CopyComplete
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.exe
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.pdb
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Dialogs.v19.2.Core.dll
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraDialogs.v19.2.dll
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraDialogs.v19.2.xml
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\de\DevExpress.Dialogs.v19.2.Core.resources.dll
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\es\DevExpress.Dialogs.v19.2.Core.resources.dll
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\ja\DevExpress.Dialogs.v19.2.Core.resources.dll
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\ru\DevExpress.Dialogs.v19.2.Core.resources.dll

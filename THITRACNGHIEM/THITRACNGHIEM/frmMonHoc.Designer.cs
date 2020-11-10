@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonHoc));
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label tENMHLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonHoc));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -51,8 +54,9 @@
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mAMHTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENMHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenMH = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
+            this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -61,9 +65,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.gc_MonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Location = new System.Drawing.Point(208, 47);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(89, 17);
+            mAMHLabel.TabIndex = 0;
+            mAMHLabel.Text = "Mã môn học:";
+            // 
+            // tENMHLabel
+            // 
+            tENMHLabel.AutoSize = true;
+            tENMHLabel.Location = new System.Drawing.Point(208, 86);
+            tENMHLabel.Name = "tENMHLabel";
+            tENMHLabel.Size = new System.Drawing.Size(95, 17);
+            tENMHLabel.TabIndex = 2;
+            tENMHLabel.Text = "Tên môn học:";
             // 
             // barManager1
             // 
@@ -77,10 +99,13 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2});
+            this.btnThem,
+            this.btnXoa,
+            this.btnSua,
+            this.btnGhi,
+            this.btnPhucHoi});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 2;
+            this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -98,27 +123,55 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // barButtonItem1
+            // btnThem
             // 
-            this.barButtonItem1.Caption = "Thêm";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
-            // barButtonItem2
+            // btnXoa
             // 
-            this.barButtonItem2.Caption = "Xoá";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnXoa.Caption = "Xoá";
+            this.btnXoa.Id = 1;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
+            // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 2;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
+            this.btnSua.Name = "btnSua";
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Caption = "Ghi";
+            this.btnGhi.Id = 3;
+            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
+            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
+            this.btnGhi.Name = "btnGhi";
+            // 
+            // btnPhucHoi
+            // 
+            this.btnPhucHoi.Caption = "Phục hồi";
+            this.btnPhucHoi.Id = 4;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
+            this.btnPhucHoi.Name = "btnPhucHoi";
             // 
             // bar3
             // 
@@ -173,7 +226,6 @@
             // 
             this.bds_MonHoc.DataMember = "MONHOC";
             this.bds_MonHoc.DataSource = this.dS;
-            this.bds_MonHoc.CurrentChanged += new System.EventHandler(this.bds_MonHoc_CurrentChanged);
             // 
             // mONHOCTableAdapter
             // 
@@ -206,7 +258,6 @@
             this.gc_MonHoc.TabIndex = 5;
             this.gc_MonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gc_MonHoc.Click += new System.EventHandler(this.gc_MonHoc_Click);
             // 
             // gridView1
             // 
@@ -222,6 +273,7 @@
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.MinWidth = 25;
             this.colMAMH.Name = "colMAMH";
+            this.colMAMH.OptionsColumn.AllowEdit = false;
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
             this.colMAMH.Width = 94;
@@ -232,6 +284,7 @@
             this.colTENMH.FieldName = "TENMH";
             this.colTENMH.MinWidth = 25;
             this.colTENMH.Name = "colTENMH";
+            this.colTENMH.OptionsColumn.AllowEdit = false;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
             this.colTENMH.Width = 94;
@@ -239,9 +292,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(tENMHLabel);
-            this.groupBox1.Controls.Add(this.tENMHTextEdit);
+            this.groupBox1.Controls.Add(this.txtTenMH);
             this.groupBox1.Controls.Add(mAMHLabel);
-            this.groupBox1.Controls.Add(this.mAMHTextEdit);
+            this.groupBox1.Controls.Add(this.txtMaMH);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 360);
             this.groupBox1.Name = "groupBox1";
@@ -250,43 +303,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // mAMHLabel
+            // txtTenMH
             // 
-            mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(208, 47);
-            mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(89, 17);
-            mAMHLabel.TabIndex = 0;
-            mAMHLabel.Text = "Mã môn học:";
+            this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_MonHoc, "TENMH", true));
+            this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_MonHoc, "TENMH", true));
+            this.txtTenMH.Location = new System.Drawing.Point(331, 81);
+            this.txtTenMH.MenuManager = this.barManager1;
+            this.txtTenMH.Name = "txtTenMH";
+            this.txtTenMH.Size = new System.Drawing.Size(254, 22);
+            this.txtTenMH.TabIndex = 3;
             // 
-            // mAMHTextEdit
+            // txtMaMH
             // 
-            this.mAMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_MonHoc, "MAMH", true));
-            this.mAMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_MonHoc, "MAMH", true));
-            this.mAMHTextEdit.Location = new System.Drawing.Point(331, 44);
-            this.mAMHTextEdit.MenuManager = this.barManager1;
-            this.mAMHTextEdit.Name = "mAMHTextEdit";
-            this.mAMHTextEdit.Size = new System.Drawing.Size(254, 22);
-            this.mAMHTextEdit.TabIndex = 1;
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_MonHoc, "MAMH", true));
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_MonHoc, "MAMH", true));
+            this.txtMaMH.Location = new System.Drawing.Point(331, 44);
+            this.txtMaMH.MenuManager = this.barManager1;
+            this.txtMaMH.Name = "txtMaMH";
+            this.txtMaMH.Size = new System.Drawing.Size(254, 22);
+            this.txtMaMH.TabIndex = 1;
             // 
-            // tENMHLabel
+            // xtraOpenFileDialog1
             // 
-            tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(208, 86);
-            tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(95, 17);
-            tENMHLabel.TabIndex = 2;
-            tENMHLabel.Text = "Tên môn học:";
-            // 
-            // tENMHTextEdit
-            // 
-            this.tENMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_MonHoc, "TENMH", true));
-            this.tENMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_MonHoc, "TENMH", true));
-            this.tENMHTextEdit.Location = new System.Drawing.Point(331, 81);
-            this.tENMHTextEdit.MenuManager = this.barManager1;
-            this.tENMHTextEdit.Name = "tENMHTextEdit";
-            this.tENMHTextEdit.Size = new System.Drawing.Size(254, 22);
-            this.tENMHTextEdit.TabIndex = 3;
+            this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             // 
             // frmMonHoc
             // 
@@ -310,8 +349,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,8 +366,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
         private System.Windows.Forms.BindingSource bds_MonHoc;
         private DS dS;
         private DSTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
@@ -338,7 +377,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.TextEdit tENMHTextEdit;
-        private DevExpress.XtraEditors.TextEdit mAMHTextEdit;
+        private DevExpress.XtraEditors.TextEdit txtTenMH;
+        private DevExpress.XtraEditors.TextEdit txtMaMH;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
+        private DevExpress.XtraBars.BarButtonItem btnGhi;
+        private DevExpress.XtraBars.BarButtonItem btnPhucHoi;
     }
 }

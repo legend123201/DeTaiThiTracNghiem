@@ -30,17 +30,29 @@ namespace THITRACNGHIEM
             // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
 
+            groupBox1.Enabled = false;
+            
         }
 
-        private void bds_MonHoc_CurrentChanged(object sender, EventArgs e)
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            try
+            {
+                bds_MonHoc.AddNew();
+                //gcMH.Enabled = false;
+                gc_MonHoc.Enabled = false;
+                //edtTenMH.Enabled = edtMaMH.Enabled = true;
+                groupBox1.Enabled = true;
+                txtMaMH.Focus();
+                //edtMaMH.Focus();
+                //btnThemMH.Enabled = btnSuaMH.Enabled = btnTaiLaiMH.Enabled = btnXoaMH.Enabled = btnTim.Enabled = edtTim.Enabled = false;
+                //checkThem = true;
+                //checkSave = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi thêm môn học " + ex.Message, "", MessageBoxButtons.OK);
+            }
         }
-
-        private void gc_MonHoc_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
