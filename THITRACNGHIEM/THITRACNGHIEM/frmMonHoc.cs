@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Utils.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,21 +32,24 @@ namespace THITRACNGHIEM
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
 
             groupBox1.Enabled = false;
-            
+            btnGhi.Enabled = btnHuy.Enabled = false;
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
+
                 bds_MonHoc.AddNew();
                 //gcMH.Enabled = false;
                 gc_MonHoc.Enabled = false;
                 //edtTenMH.Enabled = edtMaMH.Enabled = true;
                 groupBox1.Enabled = true;
-                txtMaMH.Focus();
                 //edtMaMH.Focus();
+                txtMaMH.Focus();
                 //btnThemMH.Enabled = btnSuaMH.Enabled = btnTaiLaiMH.Enabled = btnXoaMH.Enabled = btnTim.Enabled = edtTim.Enabled = false;
+                btnGhi.Enabled = btnHuy.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled =  false;
                 //checkThem = true;
                 //checkSave = false;
             }
@@ -53,6 +57,55 @@ namespace THITRACNGHIEM
             {
                 MessageBox.Show("Lỗi thêm môn học " + ex.Message, "", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtMaMH.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Mã môn học không được để trống ", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (txtTenMH.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Tên môn học không được để trống ", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            try
+            {
+                bds_MonHoc.EndEdit();
+                bds_MonHoc.ResetCurrentItem(); //chọn item vừa thêm là vị trí hiện tại đang trỏ tới
+                this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+              
+                gc_MonHoc.Enabled = true;
+                groupBox1.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = true;
+                btnGhi.Enabled = btnHuy.Enabled = false;
+            }
+            catch(Exception ex) {
+                MessageBox.Show("Thao tác lỗi!", "Thông báo", MessageBoxButtons.OK);
+                
+            }
+            MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (bds_MonHoc.Count == 0)
+            {
+                MessageBox.Show("Không có môn học để xóa!", "THÔNG BÁO", MessageBoxButtons.OK);
+            }
+            else
+            {
+                bds_MonHoc.RemoveCurrent();
+                this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
         }
     }
 }
