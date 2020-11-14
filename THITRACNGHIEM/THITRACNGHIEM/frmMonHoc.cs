@@ -107,5 +107,23 @@ namespace THITRACNGHIEM
         {
             Close();
         }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gc_MonHoc.Enabled = false;
+            groupBox1.Enabled = true;
+            btnGhi.Enabled = btnHuy.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
+        }
+
+        private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //MessageBox.Show("Không có môn học để xóa!", "THÔNG BÁO", MessageBoxButtons.YesNo,);
+            bds_MonHoc.CancelEdit();
+            gc_MonHoc.Enabled = true;
+            groupBox1.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = true;
+            btnGhi.Enabled = btnHuy.Enabled = false;
+        }
     }
 }
