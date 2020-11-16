@@ -41,5 +41,23 @@ namespace THITRACNGHIEM
                 f.Show();
             }
         }
+
+        private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmDangNhap));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                frmDangNhap f = new frmDangNhap();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
+        }
     }
 }

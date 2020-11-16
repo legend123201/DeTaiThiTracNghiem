@@ -39,8 +39,13 @@
             this.rbbQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.MaNV = new System.Windows.Forms.ToolStripStatusLabel();
+            this.HoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Nhom = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -53,7 +58,7 @@
             this.btnDangXuat,
             this.btnMonHoc});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -68,6 +73,7 @@
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
             this.btnDangNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.LargeImage")));
             this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -76,6 +82,7 @@
             this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
             this.btnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.LargeImage")));
             this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // btnMonHoc
             // 
@@ -117,11 +124,43 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MaNV,
+            this.HoTen,
+            this.Nhom});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 479);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1019, 26);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // MaNV
+            // 
+            this.MaNV.Name = "MaNV";
+            this.MaNV.Size = new System.Drawing.Size(50, 20);
+            this.MaNV.Text = "MaNV";
+            // 
+            // HoTen
+            // 
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Size = new System.Drawing.Size(52, 20);
+            this.HoTen.Text = "HoTen";
+            // 
+            // Nhom
+            // 
+            this.Nhom.Name = "Nhom";
+            this.Nhom.Size = new System.Drawing.Size(50, 20);
+            this.Nhom.Text = "Nhom";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 505);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -132,6 +171,8 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +189,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rbbQuanLy;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripStatusLabel MaNV;
+        public System.Windows.Forms.ToolStripStatusLabel HoTen;
+        public System.Windows.Forms.ToolStripStatusLabel Nhom;
     }
 }
 

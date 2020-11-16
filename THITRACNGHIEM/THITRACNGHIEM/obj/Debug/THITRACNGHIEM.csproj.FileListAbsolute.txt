@@ -98,3 +98,4 @@ E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\de\DevExpress.Di
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\es\DevExpress.Dialogs.v19.2.Core.resources.dll
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\ja\DevExpress.Dialogs.v19.2.Core.resources.dll
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\ru\DevExpress.Dialogs.v19.2.Core.resources.dll
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmDangNhap.resources

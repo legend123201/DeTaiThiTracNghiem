@@ -285,11 +285,13 @@
             // 
             this.gc_MonHoc.DataSource = this.bds_MonHoc;
             this.gc_MonHoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gc_MonHoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gc_MonHoc.Location = new System.Drawing.Point(0, 51);
             this.gc_MonHoc.MainView = this.gridView1;
+            this.gc_MonHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gc_MonHoc.MenuManager = this.barManager1;
             this.gc_MonHoc.Name = "gc_MonHoc";
-            this.gc_MonHoc.Size = new System.Drawing.Size(1005, 309);
+            this.gc_MonHoc.Size = new System.Drawing.Size(1005, 386);
             this.gc_MonHoc.TabIndex = 5;
             this.gc_MonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -299,6 +301,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAMH,
             this.colTENMH});
+            this.gridView1.DetailHeight = 437;
             this.gridView1.GridControl = this.gc_MonHoc;
             this.gridView1.Name = "gridView1";
             // 
@@ -306,23 +309,23 @@
             // 
             this.colMAMH.Caption = "Mã môn học";
             this.colMAMH.FieldName = "MAMH";
-            this.colMAMH.MinWidth = 25;
+            this.colMAMH.MinWidth = 31;
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsColumn.AllowEdit = false;
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
-            this.colMAMH.Width = 94;
+            this.colMAMH.Width = 117;
             // 
             // colTENMH
             // 
             this.colTENMH.Caption = "Tên môn học";
             this.colTENMH.FieldName = "TENMH";
-            this.colTENMH.MinWidth = 25;
+            this.colTENMH.MinWidth = 31;
             this.colTENMH.Name = "colTENMH";
             this.colTENMH.OptionsColumn.AllowEdit = false;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
-            this.colTENMH.Width = 94;
+            this.colTENMH.Width = 117;
             // 
             // groupBox1
             // 
@@ -331,9 +334,9 @@
             this.groupBox1.Controls.Add(mAMHLabel);
             this.groupBox1.Controls.Add(this.txtMaMH);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 360);
+            this.groupBox1.Location = new System.Drawing.Point(0, 437);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1005, 136);
+            this.groupBox1.Size = new System.Drawing.Size(1005, 59);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
