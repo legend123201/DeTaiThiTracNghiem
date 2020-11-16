@@ -13,6 +13,8 @@ namespace THITRACNGHIEM
 {
     public partial class frmMonHoc : Form
     {
+        PhucHoi phucHoi = new PhucHoi();
+        Boolean isDangThem = false, isDangSua = false;
         public frmMonHoc()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace THITRACNGHIEM
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
 
             groupBox1.Enabled = false;
@@ -39,7 +42,7 @@ namespace THITRACNGHIEM
         {
             try
             {
-
+                isDangThem = true;
                 bds_MonHoc.AddNew();
                 //gcMH.Enabled = false;
                 gc_MonHoc.Enabled = false;
@@ -74,6 +77,14 @@ namespace THITRACNGHIEM
             }
             try
             {
+                if (isDangThem)
+                {
+                    phucHoi.PushStack_ThemMH(txtMaMH.Text);
+                }
+                else if (isDangSua)
+                {
+                    phucHoi.PushStack_SuaMH(txtMaMH.Text);
+                }
                 bds_MonHoc.EndEdit();
                 bds_MonHoc.ResetCurrentItem(); //chọn item vừa thêm là vị trí hiện tại đang trỏ tới
                 this.mONHOCTableAdapter.Update(this.dS.MONHOC);
@@ -98,6 +109,7 @@ namespace THITRACNGHIEM
             }
             else
             {
+                phucHoi.PushStack_XoaMH(txtMaMH.Text, txtTenMH.Text);
                 bds_MonHoc.RemoveCurrent();
                 this.mONHOCTableAdapter.Update(this.dS.MONHOC);
             }
@@ -110,15 +122,33 @@ namespace THITRACNGHIEM
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            isDangSua = true;
+            phucHoi.Save_OldMH(txtMaMH.Text, txtTenMH.Text);
             gc_MonHoc.Enabled = false;
             groupBox1.Enabled = true;
             btnGhi.Enabled = btnHuy.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
         }
 
+        private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           string ketQua = phucHoi.PopStack_MH();
+            if (ketQua.Equals("success"))
+            {
+                //update lại dataTable Môn học
+                this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+            }
+            else
+            {
+                MessageBox.Show(ketQua, "Thông báo", MessageBoxButtons.OK);
+            }
+            
+        }
+
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //MessageBox.Show("Không có môn học để xóa!", "THÔNG BÁO", MessageBoxButtons.YesNo,);
+            isDangThem = isDangSua = false;
             bds_MonHoc.CancelEdit();
             gc_MonHoc.Enabled = true;
             groupBox1.Enabled = false;

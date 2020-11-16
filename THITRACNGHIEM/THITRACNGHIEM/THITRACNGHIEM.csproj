@@ -63,6 +63,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ds_V_DSPM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_V_DSPM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +89,9 @@
     <Compile Include="PhucHoi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +119,17 @@
     </None>
     <None Include="DS.xss">
       <DependentUpon>DS.xsd</DependentUpon>
+    </None>
+    <None Include="ds_V_DSPM.xsc">
+      <DependentUpon>ds_V_DSPM.xsd</DependentUpon>
+    </None>
+    <None Include="ds_V_DSPM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_V_DSPM.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds_V_DSPM.xss">
+      <DependentUpon>ds_V_DSPM.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

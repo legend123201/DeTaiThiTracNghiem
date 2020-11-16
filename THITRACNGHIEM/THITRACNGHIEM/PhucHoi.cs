@@ -9,11 +9,38 @@ namespace THITRACNGHIEM
     class PhucHoi
     {
         Stack<string> myStack = new Stack<string>();
-
-        public string PhucHoiThemMH(string maMH)
+        string MHTruocKhiSua = "";
+        public void PushStack_ThemMH(string newMaMH)
         {
-            delete dbo.MONHOC where MAMH = 'a'
-            return null;
+            myStack.Push("delete dbo.MONHOC where MAMH = '" + newMaMH + "'");
+            //int result = Program.ExecSqlNonQuery(sql);
+            //delete dbo.MONHOC where MAMH = 'a'
+            //return null;
+        }
+        public void PushStack_XoaMH(string maMH, string tenMH)
+        {
+            myStack.Push("insert into [dbo].[MONHOC] ( MAMH, TENMH ) values ('" + maMH + "', N'" + tenMH + "')");   
+        }
+        public void Save_OldMH(string oldMaMH, string oldTenMH)
+        {
+            MHTruocKhiSua = oldMaMH + "/" + oldTenMH;
+        }
+
+        public void PushStack_SuaMH(string newMaMH)
+        {
+            string[] arr = MHTruocKhiSua.Split('/');
+            myStack.Push("update[dbo].[MONHOC] set MAMH = '" + arr[0] + "', TENMH = '" + arr[1] + "' where MAMH = '" + newMaMH + "'");      
+        }
+        
+        public string PopStack_MH()
+        {
+            if(myStack.Count == 0)
+            {
+                return "Đã phục hồi hết các thao tác, không thể phục hồi được nữa!";
+            }
+            string sql = myStack.Pop();
+            Program.ExecSqlNonQuery(sql);
+            return "success";
         }
     }
 }
