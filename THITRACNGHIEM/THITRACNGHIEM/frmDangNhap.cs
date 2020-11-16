@@ -21,7 +21,7 @@ namespace THITRACNGHIEM
         {
             // TODO: This line of code loads data into the 'ds_V_DSPM.v_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.ds_V_DSPM.v_DS_PHANMANH);
-
+            cmb_COSO.SelectedIndex = 1; cmb_COSO.SelectedIndex = 0;
         }
 
         private void btnDN_Click(object sender, EventArgs e)
@@ -61,7 +61,6 @@ namespace THITRACNGHIEM
             Program.frmChinh.Nhom.Text = Program.mGroup;
 
             MessageBox.Show("Nhân viên - Nhóm : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
-
         }
 
         private void cmb_COSO_SelectedIndexChanged(object sender, EventArgs e)

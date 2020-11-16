@@ -80,10 +80,12 @@ namespace THITRACNGHIEM
                 if (isDangThem)
                 {
                     phucHoi.PushStack_ThemMH(txtMaMH.Text);
+                    isDangThem = false;
                 }
                 else if (isDangSua)
                 {
                     phucHoi.PushStack_SuaMH(txtMaMH.Text);
+                    isDangSua = false;
                 }
                 bds_MonHoc.EndEdit();
                 bds_MonHoc.ResetCurrentItem(); //chọn item vừa thêm là vị trí hiện tại đang trỏ tới
@@ -95,7 +97,7 @@ namespace THITRACNGHIEM
                 btnGhi.Enabled = btnHuy.Enabled = false;
             }
             catch(Exception ex) {
-                MessageBox.Show("Thao tác lỗi!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Thao tác lỗi!/n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
                 
             }
             MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
@@ -137,6 +139,7 @@ namespace THITRACNGHIEM
             {
                 //update lại dataTable Môn học
                 this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+                MessageBox.Show("Phục hồi thành công!", "Thông báo", MessageBoxButtons.OK);
             }
             else
             {

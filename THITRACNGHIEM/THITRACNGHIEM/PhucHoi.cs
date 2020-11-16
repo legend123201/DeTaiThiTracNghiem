@@ -13,9 +13,6 @@ namespace THITRACNGHIEM
         public void PushStack_ThemMH(string newMaMH)
         {
             myStack.Push("delete dbo.MONHOC where MAMH = '" + newMaMH + "'");
-            //int result = Program.ExecSqlNonQuery(sql);
-            //delete dbo.MONHOC where MAMH = 'a'
-            //return null;
         }
         public void PushStack_XoaMH(string maMH, string tenMH)
         {
