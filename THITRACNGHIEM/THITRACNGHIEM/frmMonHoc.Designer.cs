@@ -60,6 +60,8 @@
             this.txtTenMH = new DevExpress.XtraEditors.TextEdit();
             this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.bds_BoDe = new System.Windows.Forms.BindingSource(this.components);
+            this.bODETableAdapter = new THITRACNGHIEM.DSTableAdapters.BODETableAdapter();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -70,6 +72,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_BoDe)).BeginInit();
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -221,15 +224,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1005, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1023, 51);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 496);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1005, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1023, 20);
             // 
             // barDockControlLeft
             // 
@@ -237,15 +240,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 445);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 509);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1005, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1023, 51);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 445);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 509);
             // 
             // barButtonItem2
             // 
@@ -285,13 +288,13 @@
             // 
             this.gc_MonHoc.DataSource = this.bds_MonHoc;
             this.gc_MonHoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gc_MonHoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gc_MonHoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gc_MonHoc.Location = new System.Drawing.Point(0, 51);
             this.gc_MonHoc.MainView = this.gridView1;
-            this.gc_MonHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gc_MonHoc.Margin = new System.Windows.Forms.Padding(4);
             this.gc_MonHoc.MenuManager = this.barManager1;
             this.gc_MonHoc.Name = "gc_MonHoc";
-            this.gc_MonHoc.Size = new System.Drawing.Size(1005, 386);
+            this.gc_MonHoc.Size = new System.Drawing.Size(1023, 386);
             this.gc_MonHoc.TabIndex = 5;
             this.gc_MonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -336,7 +339,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 437);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1005, 59);
+            this.groupBox1.Size = new System.Drawing.Size(1023, 123);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -365,11 +368,20 @@
             // 
             this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             // 
+            // bds_BoDe
+            // 
+            this.bds_BoDe.DataMember = "FK_BODE_MONHOC";
+            this.bds_BoDe.DataSource = this.bds_MonHoc;
+            // 
+            // bODETableAdapter
+            // 
+            this.bODETableAdapter.ClearBeforeFill = true;
+            // 
             // frmMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 516);
+            this.ClientSize = new System.Drawing.Size(1023, 580);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gc_MonHoc);
             this.Controls.Add(this.barDockControlLeft);
@@ -389,6 +401,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_BoDe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +437,7 @@
         private DevExpress.XtraBars.BarButtonItem btnHuy;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private System.Windows.Forms.BindingSource bds_BoDe;
+        private DSTableAdapters.BODETableAdapter bODETableAdapter;
     }
 }

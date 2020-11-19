@@ -8,25 +8,31 @@ namespace THITRACNGHIEM
 {
     class PhucHoi
     {
-        Stack<string> myStack = new Stack<string>();
-        string MHTruocKhiSua = "";
+        private Stack<string> myStack = new Stack<string>();
+        private string DataTruocKhiSua = "";
+
+        public string GetDataTruocKhiSua()
+        {
+            return this.DataTruocKhiSua;
+        }
         public void PushStack_ThemMH(string newMaMH)
         {
-            myStack.Push("delete dbo.MONHOC where MAMH = '" + newMaMH + "'");
+            myStack.Push("exec [dbo].[SP_PhucHoiThemMH] '"+ newMaMH + "'");
         }
         public void PushStack_XoaMH(string maMH, string tenMH)
         {
-            myStack.Push("insert into [dbo].[MONHOC] ( MAMH, TENMH ) values ('" + maMH + "', N'" + tenMH + "')");   
+            myStack.Push("exec [dbo].[SP_PhucHoiXoaMH] '"+ maMH + "', N'" + tenMH + "'");   
         }
         public void Save_OldMH(string oldMaMH, string oldTenMH)
         {
-            MHTruocKhiSua = oldMaMH + "/" + oldTenMH;
+            DataTruocKhiSua = oldMaMH + "/" + oldTenMH;
         }
 
-        public void PushStack_SuaMH(string newMaMH)
+        public void PushStack_SuaMH(string newMaMH, string newTenMH)
         {
-            string[] arr = MHTruocKhiSua.Split('/');
-            myStack.Push("update[dbo].[MONHOC] set MAMH = '" + arr[0] + "', TENMH = '" + arr[1] + "' where MAMH = '" + newMaMH + "'");      
+            string[] arr = DataTruocKhiSua.Split('/');
+            //myStack.Push("update[dbo].[MONHOC] set MAMH = '" + arr[0] + "', TENMH = '" + arr[1] + "' where MAMH = '" + newMaMH + "'");
+            myStack.Push("exec[dbo].[SP_PhucHoiSuaMH] '" + newMaMH + "', N'" + newTenMH + "', '" + arr[0] + "', N'" + arr[1] + "'");
         }
         
         public string PopStack_MH()

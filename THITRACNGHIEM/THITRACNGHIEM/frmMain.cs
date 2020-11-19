@@ -31,6 +31,11 @@ namespace THITRACNGHIEM
 
         private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (Program.connstr == null)
+            {
+                MessageBox.Show("Bạn cần đăng nhập để vào được form này!", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
             Form frm = this.CheckExists(typeof(frmMonHoc));
             if (frm != null)
                 frm.Activate();
