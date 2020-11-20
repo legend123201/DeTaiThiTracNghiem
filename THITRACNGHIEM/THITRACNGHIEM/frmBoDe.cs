@@ -40,6 +40,13 @@ namespace THITRACNGHIEM
             cmb_DapAn.Items.Add("B");
             cmb_DapAn.Items.Add("C");
             cmb_DapAn.Items.Add("D");
+
+            groupBox1.Enabled = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
