@@ -11,6 +11,7 @@ namespace THITRACNGHIEM
         private Stack<string> myStack = new Stack<string>();
         private string DataTruocKhiSua = "";
 
+        //-----------MÔN HỌC ------------------------
         public string GetDataTruocKhiSua()
         {
             return this.DataTruocKhiSua;
@@ -44,6 +45,12 @@ namespace THITRACNGHIEM
             string sql = myStack.Pop();
             Program.ExecSqlNonQuery(sql);
             return "success";
+        }
+
+        //-----------BỘ ĐỀ------------------------
+        public void Save_OldBD(int oldMaCauHoi, string oldMaGV, string MaMH, string TrinhDo, string NoiDung, string A, string B, string C, string D, string DapAn)
+        {
+            DataTruocKhiSua = oldMaCauHoi.ToString() + "/" + oldMaGV + "/" + MaMH + "/" + TrinhDo + "/" + NoiDung + "/" + A + "/" + B + "/" + C + "/" + D + "/" + DapAn;
         }
     }
 }

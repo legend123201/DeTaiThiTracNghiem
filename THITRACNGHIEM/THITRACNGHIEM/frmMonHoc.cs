@@ -85,6 +85,8 @@ namespace THITRACNGHIEM
                 MessageBox.Show("Tên môn học không được để trống ", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
+
+            //nếu như tất cả đều ko rỗng
             try
             {
                 string sql;
@@ -234,12 +236,13 @@ namespace THITRACNGHIEM
             //MessageBox.Show("Không có môn học để xóa!", "THÔNG BÁO", MessageBoxButtons.YesNo,);
             try
             {
-                isDangThem = isDangSua = false;
+               
                 bds_MonHoc.CancelEdit();
                 if (isDangThem)
                 {
                     bds_MonHoc.RemoveCurrent();
-                }                
+                }
+                isDangThem = isDangSua = false;
                 gc_MonHoc.Enabled = true;
                 groupBox1.Enabled = false;
                 btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = true;

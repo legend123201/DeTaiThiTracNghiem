@@ -31,13 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label tRINHDOLabel;
             System.Windows.Forms.Label dAP_ANLabel;
-            System.Windows.Forms.Label cAUHOILabel;
             System.Windows.Forms.Label nOIDUNGLabel;
             System.Windows.Forms.Label aLabel;
             System.Windows.Forms.Label bLabel;
             System.Windows.Forms.Label cLabel;
             System.Windows.Forms.Label dLabel;
             System.Windows.Forms.Label mAGVLabel;
+            System.Windows.Forms.Label mAMHLabel;
+            System.Windows.Forms.Label cAUHOILabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoDe));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -59,7 +60,7 @@
             this.bODETableAdapter = new THITRACNGHIEM.DSTableAdapters.BODETableAdapter();
             this.tableAdapterManager = new THITRACNGHIEM.DSTableAdapters.TableAdapterManager();
             this.gc_BoDe = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gv_BoDe = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCAUHOI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRINHDO = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,33 +71,36 @@
             this.colD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDAP_AN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mAGVTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.dRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.cRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.bRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.aRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.nOIDUNGRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.cAUHOITextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.cmb_DapAn = new System.Windows.Forms.ComboBox();
             this.cmb_TrinhDo = new System.Windows.Forms.ComboBox();
+            this.cmb_DapAn = new System.Windows.Forms.ComboBox();
+            this.txtNoiDung = new System.Windows.Forms.RichTextBox();
+            this.txtA = new System.Windows.Forms.RichTextBox();
+            this.txtB = new System.Windows.Forms.RichTextBox();
+            this.txtC = new System.Windows.Forms.RichTextBox();
+            this.txtD = new System.Windows.Forms.RichTextBox();
+            this.txtMaGV = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.spinMaCauHoi = new DevExpress.XtraEditors.SpinEdit();
             tRINHDOLabel = new System.Windows.Forms.Label();
             dAP_ANLabel = new System.Windows.Forms.Label();
-            cAUHOILabel = new System.Windows.Forms.Label();
             nOIDUNGLabel = new System.Windows.Forms.Label();
             aLabel = new System.Windows.Forms.Label();
             bLabel = new System.Windows.Forms.Label();
             cLabel = new System.Windows.Forms.Label();
             dLabel = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
+            mAMHLabel = new System.Windows.Forms.Label();
+            cAUHOILabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_BoDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_BoDe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_BoDe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAGVTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cAUHOITextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinMaCauHoi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tRINHDOLabel
@@ -117,19 +121,10 @@
             dAP_ANLabel.TabIndex = 4;
             dAP_ANLabel.Text = "Đáp án:";
             // 
-            // cAUHOILabel
-            // 
-            cAUHOILabel.AutoSize = true;
-            cAUHOILabel.Location = new System.Drawing.Point(39, 52);
-            cAUHOILabel.Name = "cAUHOILabel";
-            cAUHOILabel.Size = new System.Drawing.Size(104, 22);
-            cAUHOILabel.TabIndex = 5;
-            cAUHOILabel.Text = "Mã câu hỏi:";
-            // 
             // nOIDUNGLabel
             // 
             nOIDUNGLabel.AutoSize = true;
-            nOIDUNGLabel.Location = new System.Drawing.Point(39, 176);
+            nOIDUNGLabel.Location = new System.Drawing.Point(37, 211);
             nOIDUNGLabel.Name = "nOIDUNGLabel";
             nOIDUNGLabel.Size = new System.Drawing.Size(88, 22);
             nOIDUNGLabel.TabIndex = 6;
@@ -138,7 +133,7 @@
             // aLabel
             // 
             aLabel.AutoSize = true;
-            aLabel.Location = new System.Drawing.Point(114, 272);
+            aLabel.Location = new System.Drawing.Point(114, 315);
             aLabel.Name = "aLabel";
             aLabel.Size = new System.Drawing.Size(30, 22);
             aLabel.TabIndex = 8;
@@ -147,7 +142,7 @@
             // bLabel
             // 
             bLabel.AutoSize = true;
-            bLabel.Location = new System.Drawing.Point(567, 272);
+            bLabel.Location = new System.Drawing.Point(567, 315);
             bLabel.Name = "bLabel";
             bLabel.Size = new System.Drawing.Size(29, 22);
             bLabel.TabIndex = 10;
@@ -156,7 +151,7 @@
             // cLabel
             // 
             cLabel.AutoSize = true;
-            cLabel.Location = new System.Drawing.Point(1019, 272);
+            cLabel.Location = new System.Drawing.Point(1019, 315);
             cLabel.Name = "cLabel";
             cLabel.Size = new System.Drawing.Size(29, 22);
             cLabel.TabIndex = 12;
@@ -165,7 +160,7 @@
             // dLabel
             // 
             dLabel.AutoSize = true;
-            dLabel.Location = new System.Drawing.Point(1471, 272);
+            dLabel.Location = new System.Drawing.Point(1471, 315);
             dLabel.Name = "dLabel";
             dLabel.Size = new System.Drawing.Size(30, 22);
             dLabel.TabIndex = 14;
@@ -174,11 +169,29 @@
             // mAGVLabel
             // 
             mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(39, 99);
+            mAGVLabel.Location = new System.Drawing.Point(37, 47);
             mAGVLabel.Name = "mAGVLabel";
             mAGVLabel.Size = new System.Drawing.Size(120, 22);
             mAGVLabel.TabIndex = 16;
             mAGVLabel.Text = "Mã giáo viên:";
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Location = new System.Drawing.Point(37, 143);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(113, 22);
+            mAMHLabel.TabIndex = 18;
+            mAMHLabel.Text = "Mã môn học:";
+            // 
+            // cAUHOILabel
+            // 
+            cAUHOILabel.AutoSize = true;
+            cAUHOILabel.Location = new System.Drawing.Point(37, 95);
+            cAUHOILabel.Name = "cAUHOILabel";
+            cAUHOILabel.Size = new System.Drawing.Size(104, 22);
+            cAUHOILabel.TabIndex = 19;
+            cAUHOILabel.Text = "Mã câu hỏi:";
             // 
             // barManager1
             // 
@@ -236,6 +249,7 @@
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnXoa
             // 
@@ -244,6 +258,7 @@
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnSua
             // 
@@ -252,6 +267,7 @@
             this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnGhi
             // 
@@ -260,6 +276,7 @@
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnHuy
             // 
@@ -268,6 +285,7 @@
             this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
             this.btnHuy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.LargeImage")));
             this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -284,6 +302,7 @@
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -363,17 +382,17 @@
             this.gc_BoDe.DataSource = this.bds_BoDe;
             this.gc_BoDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.gc_BoDe.Location = new System.Drawing.Point(0, 51);
-            this.gc_BoDe.MainView = this.gridView1;
+            this.gc_BoDe.MainView = this.gv_BoDe;
             this.gc_BoDe.MenuManager = this.barManager1;
             this.gc_BoDe.Name = "gc_BoDe";
-            this.gc_BoDe.Size = new System.Drawing.Size(1924, 281);
+            this.gc_BoDe.Size = new System.Drawing.Size(1924, 261);
             this.gc_BoDe.TabIndex = 5;
             this.gc_BoDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gv_BoDe});
             // 
-            // gridView1
+            // gv_BoDe
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gv_BoDe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCAUHOI,
             this.colMAMH,
             this.colTRINHDO,
@@ -384,8 +403,8 @@
             this.colD,
             this.colDAP_AN,
             this.colMAGV});
-            this.gridView1.GridControl = this.gc_BoDe;
-            this.gridView1.Name = "gridView1";
+            this.gv_BoDe.GridControl = this.gc_BoDe;
+            this.gv_BoDe.Name = "gv_BoDe";
             // 
             // colCAUHOI
             // 
@@ -487,96 +506,15 @@
             this.colMAGV.VisibleIndex = 9;
             this.colMAGV.Width = 94;
             // 
-            // groupBox1
+            // cmb_TrinhDo
             // 
-            this.groupBox1.Controls.Add(mAGVLabel);
-            this.groupBox1.Controls.Add(this.mAGVTextEdit);
-            this.groupBox1.Controls.Add(dLabel);
-            this.groupBox1.Controls.Add(this.dRichTextBox);
-            this.groupBox1.Controls.Add(cLabel);
-            this.groupBox1.Controls.Add(this.cRichTextBox);
-            this.groupBox1.Controls.Add(bLabel);
-            this.groupBox1.Controls.Add(this.bRichTextBox);
-            this.groupBox1.Controls.Add(aLabel);
-            this.groupBox1.Controls.Add(this.aRichTextBox);
-            this.groupBox1.Controls.Add(nOIDUNGLabel);
-            this.groupBox1.Controls.Add(this.nOIDUNGRichTextBox);
-            this.groupBox1.Controls.Add(cAUHOILabel);
-            this.groupBox1.Controls.Add(this.cAUHOITextEdit);
-            this.groupBox1.Controls.Add(dAP_ANLabel);
-            this.groupBox1.Controls.Add(this.cmb_DapAn);
-            this.groupBox1.Controls.Add(tRINHDOLabel);
-            this.groupBox1.Controls.Add(this.cmb_TrinhDo);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 332);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1924, 560);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // mAGVTextEdit
-            // 
-            this.mAGVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_BoDe, "MAGV", true));
-            this.mAGVTextEdit.Location = new System.Drawing.Point(179, 99);
-            this.mAGVTextEdit.MenuManager = this.barManager1;
-            this.mAGVTextEdit.Name = "mAGVTextEdit";
-            this.mAGVTextEdit.Size = new System.Drawing.Size(150, 22);
-            this.mAGVTextEdit.TabIndex = 17;
-            // 
-            // dRichTextBox
-            // 
-            this.dRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "D", true));
-            this.dRichTextBox.Location = new System.Drawing.Point(1509, 269);
-            this.dRichTextBox.Name = "dRichTextBox";
-            this.dRichTextBox.Size = new System.Drawing.Size(315, 96);
-            this.dRichTextBox.TabIndex = 15;
-            this.dRichTextBox.Text = "";
-            // 
-            // cRichTextBox
-            // 
-            this.cRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "C", true));
-            this.cRichTextBox.Location = new System.Drawing.Point(1056, 269);
-            this.cRichTextBox.Name = "cRichTextBox";
-            this.cRichTextBox.Size = new System.Drawing.Size(315, 96);
-            this.cRichTextBox.TabIndex = 13;
-            this.cRichTextBox.Text = "";
-            // 
-            // bRichTextBox
-            // 
-            this.bRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "B", true));
-            this.bRichTextBox.Location = new System.Drawing.Point(603, 269);
-            this.bRichTextBox.Name = "bRichTextBox";
-            this.bRichTextBox.Size = new System.Drawing.Size(315, 96);
-            this.bRichTextBox.TabIndex = 11;
-            this.bRichTextBox.Text = "";
-            // 
-            // aRichTextBox
-            // 
-            this.aRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "A", true));
-            this.aRichTextBox.Location = new System.Drawing.Point(150, 269);
-            this.aRichTextBox.Name = "aRichTextBox";
-            this.aRichTextBox.Size = new System.Drawing.Size(315, 96);
-            this.aRichTextBox.TabIndex = 9;
-            this.aRichTextBox.Text = "";
-            // 
-            // nOIDUNGRichTextBox
-            // 
-            this.nOIDUNGRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "NOIDUNG", true));
-            this.nOIDUNGRichTextBox.Location = new System.Drawing.Point(150, 173);
-            this.nOIDUNGRichTextBox.Name = "nOIDUNGRichTextBox";
-            this.nOIDUNGRichTextBox.Size = new System.Drawing.Size(1676, 67);
-            this.nOIDUNGRichTextBox.TabIndex = 7;
-            this.nOIDUNGRichTextBox.Text = "";
-            // 
-            // cAUHOITextEdit
-            // 
-            this.cAUHOITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_BoDe, "CAUHOI", true));
-            this.cAUHOITextEdit.Location = new System.Drawing.Point(179, 52);
-            this.cAUHOITextEdit.MenuManager = this.barManager1;
-            this.cAUHOITextEdit.Name = "cAUHOITextEdit";
-            this.cAUHOITextEdit.Size = new System.Drawing.Size(150, 22);
-            this.cAUHOITextEdit.TabIndex = 6;
+            this.cmb_TrinhDo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "TRINHDO", true));
+            this.cmb_TrinhDo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_TrinhDo.FormattingEnabled = true;
+            this.cmb_TrinhDo.Location = new System.Drawing.Point(595, 48);
+            this.cmb_TrinhDo.Name = "cmb_TrinhDo";
+            this.cmb_TrinhDo.Size = new System.Drawing.Size(132, 30);
+            this.cmb_TrinhDo.TabIndex = 3;
             // 
             // cmb_DapAn
             // 
@@ -588,15 +526,114 @@
             this.cmb_DapAn.Size = new System.Drawing.Size(132, 30);
             this.cmb_DapAn.TabIndex = 5;
             // 
-            // cmb_TrinhDo
+            // txtNoiDung
             // 
-            this.cmb_TrinhDo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "TRINHDO", true));
-            this.cmb_TrinhDo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_TrinhDo.FormattingEnabled = true;
-            this.cmb_TrinhDo.Location = new System.Drawing.Point(595, 48);
-            this.cmb_TrinhDo.Name = "cmb_TrinhDo";
-            this.cmb_TrinhDo.Size = new System.Drawing.Size(132, 30);
-            this.cmb_TrinhDo.TabIndex = 3;
+            this.txtNoiDung.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "NOIDUNG", true));
+            this.txtNoiDung.Location = new System.Drawing.Point(148, 208);
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.Size = new System.Drawing.Size(1676, 67);
+            this.txtNoiDung.TabIndex = 7;
+            this.txtNoiDung.Text = "";
+            // 
+            // txtA
+            // 
+            this.txtA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "A", true));
+            this.txtA.Location = new System.Drawing.Point(150, 312);
+            this.txtA.Name = "txtA";
+            this.txtA.Size = new System.Drawing.Size(315, 96);
+            this.txtA.TabIndex = 9;
+            this.txtA.Text = "";
+            // 
+            // txtB
+            // 
+            this.txtB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "B", true));
+            this.txtB.Location = new System.Drawing.Point(603, 312);
+            this.txtB.Name = "txtB";
+            this.txtB.Size = new System.Drawing.Size(315, 96);
+            this.txtB.TabIndex = 11;
+            this.txtB.Text = "";
+            // 
+            // txtC
+            // 
+            this.txtC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "C", true));
+            this.txtC.Location = new System.Drawing.Point(1056, 312);
+            this.txtC.Name = "txtC";
+            this.txtC.Size = new System.Drawing.Size(315, 96);
+            this.txtC.TabIndex = 13;
+            this.txtC.Text = "";
+            // 
+            // txtD
+            // 
+            this.txtD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_BoDe, "D", true));
+            this.txtD.Location = new System.Drawing.Point(1509, 312);
+            this.txtD.Name = "txtD";
+            this.txtD.Size = new System.Drawing.Size(315, 96);
+            this.txtD.TabIndex = 15;
+            this.txtD.Text = "";
+            // 
+            // txtMaGV
+            // 
+            this.txtMaGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_BoDe, "MAGV", true));
+            this.txtMaGV.Location = new System.Drawing.Point(185, 47);
+            this.txtMaGV.MenuManager = this.barManager1;
+            this.txtMaGV.Name = "txtMaGV";
+            this.txtMaGV.Size = new System.Drawing.Size(125, 22);
+            this.txtMaGV.TabIndex = 17;
+            // 
+            // txtMaMH
+            // 
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_BoDe, "MAMH", true));
+            this.txtMaMH.Location = new System.Drawing.Point(185, 143);
+            this.txtMaMH.MenuManager = this.barManager1;
+            this.txtMaMH.Name = "txtMaMH";
+            this.txtMaMH.Size = new System.Drawing.Size(125, 22);
+            this.txtMaMH.TabIndex = 19;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(cAUHOILabel);
+            this.groupBox1.Controls.Add(this.spinMaCauHoi);
+            this.groupBox1.Controls.Add(mAMHLabel);
+            this.groupBox1.Controls.Add(this.txtMaMH);
+            this.groupBox1.Controls.Add(mAGVLabel);
+            this.groupBox1.Controls.Add(this.txtMaGV);
+            this.groupBox1.Controls.Add(dLabel);
+            this.groupBox1.Controls.Add(this.txtD);
+            this.groupBox1.Controls.Add(cLabel);
+            this.groupBox1.Controls.Add(this.txtC);
+            this.groupBox1.Controls.Add(bLabel);
+            this.groupBox1.Controls.Add(this.txtB);
+            this.groupBox1.Controls.Add(aLabel);
+            this.groupBox1.Controls.Add(this.txtA);
+            this.groupBox1.Controls.Add(nOIDUNGLabel);
+            this.groupBox1.Controls.Add(this.txtNoiDung);
+            this.groupBox1.Controls.Add(dAP_ANLabel);
+            this.groupBox1.Controls.Add(this.cmb_DapAn);
+            this.groupBox1.Controls.Add(tRINHDOLabel);
+            this.groupBox1.Controls.Add(this.cmb_TrinhDo);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 312);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1924, 580);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // spinMaCauHoi
+            // 
+            this.spinMaCauHoi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_BoDe, "CAUHOI", true));
+            this.spinMaCauHoi.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinMaCauHoi.Location = new System.Drawing.Point(185, 94);
+            this.spinMaCauHoi.MenuManager = this.barManager1;
+            this.spinMaCauHoi.Name = "spinMaCauHoi";
+            this.spinMaCauHoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinMaCauHoi.Size = new System.Drawing.Size(125, 24);
+            this.spinMaCauHoi.TabIndex = 20;
             // 
             // frmBoDe
             // 
@@ -619,11 +656,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_BoDe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_BoDe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_BoDe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAGVTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cAUHOITextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinMaCauHoi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -651,7 +689,7 @@
         private DSTableAdapters.BODETableAdapter bODETableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gc_BoDe;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_BoDe;
         private DevExpress.XtraGrid.Columns.GridColumn colCAUHOI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTRINHDO;
@@ -663,14 +701,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDAP_AN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmb_TrinhDo;
+        private DevExpress.XtraEditors.SpinEdit spinMaCauHoi;
+        private DevExpress.XtraEditors.TextEdit txtMaMH;
+        private DevExpress.XtraEditors.TextEdit txtMaGV;
+        private System.Windows.Forms.RichTextBox txtD;
+        private System.Windows.Forms.RichTextBox txtC;
+        private System.Windows.Forms.RichTextBox txtB;
+        private System.Windows.Forms.RichTextBox txtA;
+        private System.Windows.Forms.RichTextBox txtNoiDung;
         private System.Windows.Forms.ComboBox cmb_DapAn;
-        private DevExpress.XtraEditors.TextEdit mAGVTextEdit;
-        private System.Windows.Forms.RichTextBox dRichTextBox;
-        private System.Windows.Forms.RichTextBox cRichTextBox;
-        private System.Windows.Forms.RichTextBox bRichTextBox;
-        private System.Windows.Forms.RichTextBox aRichTextBox;
-        private System.Windows.Forms.RichTextBox nOIDUNGRichTextBox;
-        private DevExpress.XtraEditors.TextEdit cAUHOITextEdit;
+        private System.Windows.Forms.ComboBox cmb_TrinhDo;
     }
 }

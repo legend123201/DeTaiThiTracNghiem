@@ -67,6 +67,7 @@
             this.rbbHeThong,
             this.rbbQuanLy});
             this.ribbonControl1.Size = new System.Drawing.Size(1019, 193);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnDangNhap
             // 
