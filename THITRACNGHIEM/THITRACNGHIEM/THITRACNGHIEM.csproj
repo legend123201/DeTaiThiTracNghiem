@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds_V_DSPM.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmBoDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBoDe.Designer.cs">
+      <DependentUpon>frmBoDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="PhucHoi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBoDe.resx">
+      <DependentUpon>frmBoDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>

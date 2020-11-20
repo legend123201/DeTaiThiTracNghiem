@@ -34,6 +34,7 @@
             this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBoDe = new DevExpress.XtraBars.BarButtonItem();
             this.rbbHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbbQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -56,10 +57,11 @@
             this.ribbonControl1.SearchEditItem,
             this.btnDangNhap,
             this.btnDangXuat,
-            this.btnMonHoc});
+            this.btnMonHoc,
+            this.btnBoDe});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbbHeThong,
@@ -93,6 +95,15 @@
             this.btnMonHoc.Name = "btnMonHoc";
             this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonHoc_ItemClick);
             // 
+            // btnBoDe
+            // 
+            this.btnBoDe.Caption = "Bộ đề";
+            this.btnBoDe.Id = 4;
+            this.btnBoDe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoDe.ImageOptions.Image")));
+            this.btnBoDe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoDe.ImageOptions.LargeImage")));
+            this.btnBoDe.Name = "btnBoDe";
+            this.btnBoDe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoDe_ItemClick);
+            // 
             // rbbHeThong
             // 
             this.rbbHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -117,6 +128,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMonHoc);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnBoDe);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
@@ -193,6 +205,7 @@
         public System.Windows.Forms.ToolStripStatusLabel MaNV;
         public System.Windows.Forms.ToolStripStatusLabel HoTen;
         public System.Windows.Forms.ToolStripStatusLabel Nhom;
+        private DevExpress.XtraBars.BarButtonItem btnBoDe;
     }
 }
 
