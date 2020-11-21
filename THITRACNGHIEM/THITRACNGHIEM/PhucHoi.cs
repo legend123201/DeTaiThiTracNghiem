@@ -68,5 +68,27 @@ namespace THITRACNGHIEM
             string[] arr = DataTruocKhiSua.Split('/');
             myStack.Push("exec[dbo].[SP_PhucHoiSuaBD] " + newMaCauHoi.ToString() + "," + arr[0] + ", '" + arr[1] + "', '" + arr[2] + "', '" + arr[3] + "', N'" + arr[4] + "', N'" + arr[5] + "', N'" + arr[6] + "', N'" + arr[7] + "', N'" + arr[8] + "', '" + arr[9] + "'");
         }
+
+        //-----------KHOA-----------------------
+        public void PushStack_ThemKH(string newMaKH)
+        {
+            myStack.Push("exec [dbo].[SP_PhucHoiThemKH] N'"+ newMaKH + "'");
+        }
+
+        public void PushStack_XoaKH(string maKH, string tenKH, string maCS)
+        {
+            myStack.Push("exec [dbo].[SP_PhucHoiXoaKH] N'" + maKH + "', N'" + tenKH + "', N'" + maCS + "'");
+        }
+
+        public void Save_OldKH(string oldMaKH, string oldTenKH, string oldMaCS)
+        {
+            DataTruocKhiSua = oldMaKH + "/" + oldTenKH + "/" + oldMaCS;
+        }
+
+        public void PushStack_SuaKH(string newMaKH, string newTenKH)
+        {
+            string[] arr = DataTruocKhiSua.Split('/');
+            myStack.Push("exec[dbo].[SP_PhucHoiSuaMH] N'" + newMaKH + "', N'" + newTenKH + "', N'" + arr[0] + "', N'" + arr[1] + "', N'" + arr[2] + "'");
+        }
     }
 }
