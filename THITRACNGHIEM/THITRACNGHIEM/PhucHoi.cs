@@ -48,9 +48,9 @@ namespace THITRACNGHIEM
         }
 
         //-----------BỘ ĐỀ------------------------
-        public void Save_OldBD(int oldMaCauHoi, string oldMaGV, string MaMH, string TrinhDo, string NoiDung, string A, string B, string C, string D, string DapAn)
+        public void Save_OldBD(int oldMaCauHoi, string oldMaGV, string oldMaMH, string oldTrinhDo, string oldNoiDung, string oldA, string oldB, string oldC, string oldD, string oldDapAn)
         {
-            DataTruocKhiSua = oldMaCauHoi.ToString() + "/" + oldMaGV + "/" + MaMH + "/" + TrinhDo + "/" + NoiDung + "/" + A + "/" + B + "/" + C + "/" + D + "/" + DapAn;
+            DataTruocKhiSua = oldMaCauHoi.ToString() + "/" + oldMaGV + "/" + oldMaMH + "/" + oldTrinhDo + "/" + oldNoiDung + "/" + oldA + "/" + oldB + "/" + oldC + "/" + oldD + "/" + oldDapAn;
         }
     }
 }
