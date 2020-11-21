@@ -67,7 +67,7 @@ namespace THITRACNGHIEM
                 {
                     try
                     {
-                        /*phucHoi.PushStack_XoaMH(txtMaMH.Text, txtTenMH.Text);*/
+                        phucHoi.PushStack_XoaBD(int.Parse(spinMaCauHoi.Text), txtMaGV.Text, txtMaMH.Text, cmb_TrinhDo.Text, txtNoiDung.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, cmb_DapAn.Text);
                         bds_BoDe.RemoveCurrent();
                         /*this.mONHOCTableAdapter.Update(this.dS.MONHOC);*/
                         this.bODETableAdapter.Update(this.dS.BODE);
@@ -244,16 +244,16 @@ namespace THITRACNGHIEM
                 }
 
                 //nếu như không trùng gì hết
-                /*if (isDangThem)
+                if (isDangThem)
                 {
-                    phucHoi.PushStack_ThemMH(txtMaMH.Text);
+                    phucHoi.PushStack_ThemBD(int.Parse(spinMaCauHoi.Text));
                     isDangThem = false;
                 }
                 else if (isDangSua)
                 {
-                    phucHoi.PushStack_SuaMH(txtMaMH.Text, txtTenMH.Text);
+                    phucHoi.PushStack_SuaBD(int.Parse(spinMaCauHoi.Text));
                     isDangSua = false;
-                }*/
+                }
                 bds_BoDe.EndEdit();
                 bds_BoDe.ResetCurrentItem(); //chọn item vừa thêm là vị trí hiện tại đang trỏ tới
                 //this.mONHOCTableAdapter.Update(this.dS.MONHOC);
@@ -272,7 +272,20 @@ namespace THITRACNGHIEM
             MessageBox.Show("Thao tác thành công!", "Thông báo", MessageBoxButtons.OK);
         }
 
-        
+        private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string ketQua = phucHoi.PopStack();
+            if (ketQua.Equals("success"))
+            {
+                //update lại dataTable BỘ ĐỀ
+                this.bODETableAdapter.Fill(this.dS.BODE);
+                //MessageBox.Show("Phục hồi thành công!", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show(ketQua, "Thông báo", MessageBoxButtons.OK);
+            }
+        }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

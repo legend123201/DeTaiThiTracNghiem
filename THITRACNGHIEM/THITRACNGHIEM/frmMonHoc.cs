@@ -217,7 +217,7 @@ namespace THITRACNGHIEM
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           string ketQua = phucHoi.PopStack_MH();
+           string ketQua = phucHoi.PopStack();
             if (ketQua.Equals("success"))
             {
                 //update lại dataTable Môn học

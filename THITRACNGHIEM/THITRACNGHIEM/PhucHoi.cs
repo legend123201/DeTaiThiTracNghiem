@@ -36,7 +36,7 @@ namespace THITRACNGHIEM
             myStack.Push("exec[dbo].[SP_PhucHoiSuaMH] '" + newMaMH + "', N'" + newTenMH + "', '" + arr[0] + "', N'" + arr[1] + "'");
         }
         
-        public string PopStack_MH()
+        public string PopStack()
         {
             if(myStack.Count == 0)
             {
@@ -48,9 +48,25 @@ namespace THITRACNGHIEM
         }
 
         //-----------BỘ ĐỀ------------------------
+        public void PushStack_ThemBD(int newMaCauHoi)
+        {
+            myStack.Push("exec [dbo].[SP_PhucHoiThemBD] " + newMaCauHoi.ToString());
+        }
+
+        public void PushStack_XoaBD(int maCauHoi, string maGV, string maMH, string trinhDo, string noiDung, string A, string B, string C, string D, string dapAn)
+        {
+            myStack.Push("exec [dbo].[SP_PhucHoiXoaBD] "+ maCauHoi.ToString() + ", '" + maGV + "', '" + maMH + "', '" + trinhDo + "', N'" + noiDung + "', N'" + A + "', N'" + B + "', N'" + C + "', N'" + D + "', '" + dapAn + "'");
+        }
+
         public void Save_OldBD(int oldMaCauHoi, string oldMaGV, string oldMaMH, string oldTrinhDo, string oldNoiDung, string oldA, string oldB, string oldC, string oldD, string oldDapAn)
         {
             DataTruocKhiSua = oldMaCauHoi.ToString() + "/" + oldMaGV + "/" + oldMaMH + "/" + oldTrinhDo + "/" + oldNoiDung + "/" + oldA + "/" + oldB + "/" + oldC + "/" + oldD + "/" + oldDapAn;
+        }
+
+        public void PushStack_SuaBD(int newMaCauHoi)
+        {
+            string[] arr = DataTruocKhiSua.Split('/');
+            myStack.Push("exec[dbo].[SP_PhucHoiSuaBD] " + newMaCauHoi.ToString() + "," + arr[0] + ", '" + arr[1] + "', '" + arr[2] + "', '" + arr[3] + "', N'" + arr[4] + "', N'" + arr[5] + "', N'" + arr[6] + "', N'" + arr[7] + "', N'" + arr[8] + "', '" + arr[9] + "'");
         }
     }
 }
