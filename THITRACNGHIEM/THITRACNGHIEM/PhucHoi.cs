@@ -90,5 +90,27 @@ namespace THITRACNGHIEM
             string[] arr = DataTruocKhiSua.Split('/');
             myStack.Push("exec[dbo].[SP_PhucHoiSuaMH] N'" + newMaKH + "', N'" + newTenKH + "', N'" + arr[0] + "', N'" + arr[1] + "', N'" + arr[2] + "'");
         }
+
+        //-----------LOP-----------------------
+        public void PushStack_ThemLop(string newMaLop)
+        {
+            myStack.Push("exec [dbo].[SP_PhucHoiThemKH] '" + newMaLop + "'");
+        }
+
+        public void PushStack_XoaLop(string maLop, string tenLop, string maKH)
+        {
+            myStack.Push("exec [dbo].[SP_PhucHoiXoaKH] '" + maLop + "', N'" + tenLop + "', N'" + maKH + "'");
+        }
+
+        public void Save_OldLop(string oldMaLop, string oldTenLop, string oldMaKH)
+        {
+            DataTruocKhiSua = oldMaLop + "/" + oldTenLop + "/" + oldMaKH;
+        }
+
+        public void PushStack_SuaLop(string newMaLop, string newTenLop)
+        {
+            string[] arr = DataTruocKhiSua.Split('/');
+            myStack.Push("exec[dbo].[SP_PhucHoiSuaMH] '" + newMaLop + "', N'" + newTenLop + "', '" + arr[0] + "', N'" + arr[1] + "', N'" + arr[2] + "'");
+        }
     }
 }
