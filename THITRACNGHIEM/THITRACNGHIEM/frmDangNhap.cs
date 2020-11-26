@@ -21,7 +21,17 @@ namespace THITRACNGHIEM
         {
             // TODO: This line of code loads data into the 'ds_V_DSPM.v_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.ds_V_DSPM.v_DS_PHANMANH);
-            cmb_COSO.SelectedIndex = 1; cmb_COSO.SelectedIndex = 0;
+            string chuoiketnoi = "Data Source=DESKTOP-D1DKRD0\\LUU;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+            Program.conn.ConnectionString = chuoiketnoi;
+            Program.conn.Open();
+            DataTable dt = new DataTable();
+            dt = Program.ExecSqlDataTable("SELECT * FROM v_DS_PHANMANH");
+            Program.bds_dspm.DataSource = dt;
+            cmb_COSO.DataSource = dt;
+            cmb_COSO.DisplayMember = "TEN_COSO";
+            cmb_COSO.ValueMember = "TEN_SERVER";
+            cmb_COSO.SelectedIndex = 0;
+            //cmb_COSO.SelectedIndex = 1; cmb_COSO.SelectedIndex = 0;
         }
 
         private void btnDN_Click(object sender, EventArgs e)

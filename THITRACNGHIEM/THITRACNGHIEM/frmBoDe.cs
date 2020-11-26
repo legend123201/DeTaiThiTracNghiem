@@ -248,7 +248,7 @@ namespace THITRACNGHIEM
                 if (isDangThem)
                 {
                     //làm hàm tự thêm vào csdl, vì cái add new trong đây sẽ tự động thêm mã câu hỏi nhưng sql lại ko cần                 
-                    Program.ExecSqlNonQuery("exec[dbo].[SP_ThemBD] " + "'" + txtMaGV.Text + "', '" + txtMaMH.Text + "', '" + cmb_TrinhDo.Text + "', N'" + txtNoiDung.Text + "', N'" + txtA.Text + "', N'" + txtB.Text + "', N'" + txtC.Text + "', N'" + txtD.Text + "', '" + cmb_DapAn.Text + "'");
+                    //Program.ExecSqlNonQuery("exec[dbo].[SP_ThemBD] " + "'" + txtMaGV.Text + "', '" + txtMaMH.Text + "', '" + cmb_TrinhDo.Text + "', N'" + txtNoiDung.Text + "', N'" + txtA.Text + "', N'" + txtB.Text + "', N'" + txtC.Text + "', N'" + txtD.Text + "', '" + cmb_DapAn.Text + "'");
                     phucHoi.PushStack_ThemBD(int.Parse(spinMaCauHoi.Text));
                     isDangThem = false;
                 }

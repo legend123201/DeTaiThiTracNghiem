@@ -44,6 +44,8 @@
             this.MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.Nhom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -58,10 +60,11 @@
             this.btnDangNhap,
             this.btnDangXuat,
             this.btnMonHoc,
-            this.btnBoDe});
+            this.btnBoDe,
+            this.btnSinhVien});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbbHeThong,
@@ -122,7 +125,8 @@
             // rbbQuanLy
             // 
             this.rbbQuanLy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.rbbQuanLy.Name = "rbbQuanLy";
             this.rbbQuanLy.Text = "Quản Lý";
             // 
@@ -168,6 +172,19 @@
             this.Nhom.Size = new System.Drawing.Size(50, 20);
             this.Nhom.Text = "Nhom";
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSinhVien);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
+            // btnSinhVien
+            // 
+            this.btnSinhVien.Caption = "Sinh viên";
+            this.btnSinhVien.Id = 5;
+            this.btnSinhVien.Name = "btnSinhVien";
+            this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSinhVien_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -207,6 +224,8 @@
         public System.Windows.Forms.ToolStripStatusLabel HoTen;
         public System.Windows.Forms.ToolStripStatusLabel Nhom;
         private DevExpress.XtraBars.BarButtonItem btnBoDe;
+        private DevExpress.XtraBars.BarButtonItem btnSinhVien;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }
 

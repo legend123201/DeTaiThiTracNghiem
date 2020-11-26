@@ -87,5 +87,23 @@ namespace THITRACNGHIEM
         {
 
         }
+
+        private void btnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Program.connstr == null)
+            {
+                MessageBox.Show("Bạn cần đăng nhập để vào được form này!", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = this.CheckExists(typeof(frmSinhVien));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                frmSinhVien f = new frmSinhVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
