@@ -633,6 +633,7 @@
             this.spinMaCauHoi.Name = "spinMaCauHoi";
             this.spinMaCauHoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinMaCauHoi.Properties.ReadOnly = true;
             this.spinMaCauHoi.Size = new System.Drawing.Size(125, 24);
             this.spinMaCauHoi.TabIndex = 20;
             // 
@@ -702,7 +703,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDAP_AN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SpinEdit spinMaCauHoi;
         private DevExpress.XtraEditors.TextEdit txtMaMH;
         private DevExpress.XtraEditors.TextEdit txtMaGV;
         private System.Windows.Forms.RichTextBox txtD;
@@ -712,5 +712,6 @@
         private System.Windows.Forms.RichTextBox txtNoiDung;
         private System.Windows.Forms.ComboBox cmb_DapAn;
         private System.Windows.Forms.ComboBox cmb_TrinhDo;
+        private DevExpress.XtraEditors.SpinEdit spinMaCauHoi;
     }
 }

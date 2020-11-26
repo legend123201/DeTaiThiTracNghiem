@@ -67,6 +67,7 @@ namespace THITRACNGHIEM
                 {
                     try
                     {
+                        
                         phucHoi.PushStack_XoaBD(int.Parse(spinMaCauHoi.Text), txtMaGV.Text, txtMaMH.Text, cmb_TrinhDo.Text, txtNoiDung.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, cmb_DapAn.Text);
                         bds_BoDe.RemoveCurrent();
                         /*this.mONHOCTableAdapter.Update(this.dS.MONHOC);*/
@@ -95,7 +96,7 @@ namespace THITRACNGHIEM
             txtB.Text = txtB.Text.Trim();
             txtC.Text = txtC.Text.Trim();
             txtD.Text = txtD.Text.Trim();
-            phucHoi.Save_OldBD(int.Parse(spinMaCauHoi.Text), txtMaGV.Text, txtMaMH.Text, cmb_TrinhDo.Text, txtNoiDung.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, cmb_DapAn.Text);
+            phucHoi.Save_OldBD(txtMaGV.Text, txtMaMH.Text, cmb_TrinhDo.Text, txtNoiDung.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, cmb_DapAn.Text);
 
             gc_BoDe.Enabled = false;
             groupBox1.Enabled = true;
@@ -246,6 +247,8 @@ namespace THITRACNGHIEM
                 //nếu như không trùng gì hết
                 if (isDangThem)
                 {
+                    //làm hàm tự thêm vào csdl, vì cái add new trong đây sẽ tự động thêm mã câu hỏi nhưng sql lại ko cần                 
+                    Program.ExecSqlNonQuery("exec[dbo].[SP_ThemBD] " + "'" + txtMaGV.Text + "', '" + txtMaMH.Text + "', '" + cmb_TrinhDo.Text + "', N'" + txtNoiDung.Text + "', N'" + txtA.Text + "', N'" + txtB.Text + "', N'" + txtC.Text + "', N'" + txtD.Text + "', '" + cmb_DapAn.Text + "'");
                     phucHoi.PushStack_ThemBD(int.Parse(spinMaCauHoi.Text));
                     isDangThem = false;
                 }
@@ -297,23 +300,23 @@ namespace THITRACNGHIEM
                 gc_BoDe.Enabled = false;        
                 groupBox1.Enabled = true;
 
-                if(bds_BoDe.Count == 0)
-                {
-                    spinMaCauHoi.Text = "1";
-                }
-                else
-                {
-                    int maxMaCauHoi = -1;
-                    for(int i = 0; i < bds_BoDe.Count - 1; i++)
-                    {
-                        if(int.Parse(((DataRowView)bds_BoDe[i])["CAUHOI"].ToString()) > maxMaCauHoi)
-                        {
-                            maxMaCauHoi = int.Parse(((DataRowView)bds_BoDe[i])["CAUHOI"].ToString());
-                        }
-                    }
-                    maxMaCauHoi++;
-                    spinMaCauHoi.Text = maxMaCauHoi.ToString();
-                }
+                //if(bds_BoDe.Count == 0)
+                //{
+                //    spinMaCauHoi.Text = "1";
+                //}
+                //else
+                //{
+                //    int maxMaCauHoi = -1;
+                //    for(int i = 0; i < bds_BoDe.Count - 1; i++)
+                //    {
+                //        if(int.Parse(((DataRowView)bds_BoDe[i])["CAUHOI"].ToString()) > maxMaCauHoi)
+                //        {
+                //            maxMaCauHoi = int.Parse(((DataRowView)bds_BoDe[i])["CAUHOI"].ToString());
+                //        }
+                //    }
+                //    maxMaCauHoi++;
+                //    spinMaCauHoi.Text = maxMaCauHoi.ToString();
+                //}
                 
                 txtMaGV.Text = Program.username;
                 txtMaGV.Enabled = false;

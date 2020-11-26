@@ -58,15 +58,15 @@ namespace THITRACNGHIEM
             myStack.Push("exec [dbo].[SP_PhucHoiXoaBD] "+ maCauHoi.ToString() + ", '" + maGV + "', '" + maMH + "', '" + trinhDo + "', N'" + noiDung + "', N'" + A + "', N'" + B + "', N'" + C + "', N'" + D + "', '" + dapAn + "'");
         }
 
-        public void Save_OldBD(int oldMaCauHoi, string oldMaGV, string oldMaMH, string oldTrinhDo, string oldNoiDung, string oldA, string oldB, string oldC, string oldD, string oldDapAn)
+        public void Save_OldBD(string oldMaGV, string oldMaMH, string oldTrinhDo, string oldNoiDung, string oldA, string oldB, string oldC, string oldD, string oldDapAn)
         {
-            DataTruocKhiSua = oldMaCauHoi.ToString() + "/" + oldMaGV + "/" + oldMaMH + "/" + oldTrinhDo + "/" + oldNoiDung + "/" + oldA + "/" + oldB + "/" + oldC + "/" + oldD + "/" + oldDapAn;
+            DataTruocKhiSua = oldMaGV + "/" + oldMaMH + "/" + oldTrinhDo + "/" + oldNoiDung + "/" + oldA + "/" + oldB + "/" + oldC + "/" + oldD + "/" + oldDapAn;
         }
 
-        public void PushStack_SuaBD(int newMaCauHoi)
+        public void PushStack_SuaBD(int MaCauHoi)
         {
             string[] arr = DataTruocKhiSua.Split('/');
-            myStack.Push("exec[dbo].[SP_PhucHoiSuaBD] " + newMaCauHoi.ToString() + "," + arr[0] + ", '" + arr[1] + "', '" + arr[2] + "', '" + arr[3] + "', N'" + arr[4] + "', N'" + arr[5] + "', N'" + arr[6] + "', N'" + arr[7] + "', N'" + arr[8] + "', '" + arr[9] + "'");
+            myStack.Push("exec[dbo].[SP_PhucHoiSuaBD] " + MaCauHoi.ToString() + ", '" + arr[0] + "', '" + arr[1] + "', '" + arr[2] + "', N'" + arr[3] + "', N'" + arr[4] + "', N'" + arr[5] + "', N'" + arr[6] + "', N'" + arr[7] + "', '" + arr[8] + "'");
         }
 
         //-----------KHOA-----------------------

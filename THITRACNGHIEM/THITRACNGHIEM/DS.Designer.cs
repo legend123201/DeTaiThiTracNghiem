@@ -917,10 +917,10 @@ namespace THITRACNGHIEM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BANGDIEMRow AddBANGDIEMRow(long IDBD, MONHOCRow parentMONHOCRowByFK_BANGDIEM_MONHOC, SINHVIENRow parentSINHVIENRowByFK_BANGDIEM_SINHVIEN1, short LAN, System.DateTime NGAYTHI, double DIEM, string BAITHI) {
+            public BANGDIEMRow AddBANGDIEMRow(MONHOCRow parentMONHOCRowByFK_BANGDIEM_MONHOC, SINHVIENRow parentSINHVIENRowByFK_BANGDIEM_SINHVIEN1, short LAN, System.DateTime NGAYTHI, double DIEM, string BAITHI) {
                 BANGDIEMRow rowBANGDIEMRow = ((BANGDIEMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDBD,
+                        null,
                         null,
                         null,
                         LAN,
@@ -990,6 +990,8 @@ namespace THITRACNGHIEM {
                 base.Columns.Add(this.columnBAITHI);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDBD}, true));
+                this.columnIDBD.AutoIncrement = true;
+                this.columnIDBD.AutoIncrementSeed = 1;
                 this.columnIDBD.AllowDBNull = false;
                 this.columnIDBD.Unique = true;
                 this.columnMAMH.AllowDBNull = false;
@@ -1386,6 +1388,7 @@ namespace THITRACNGHIEM {
                 base.Columns.Add(this.columnMAGV);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCAUHOI}, true));
+                this.columnCAUHOI.AutoIncrementSeed = 1;
                 this.columnCAUHOI.AllowDBNull = false;
                 this.columnCAUHOI.Unique = true;
                 this.columnMAMH.AllowDBNull = false;

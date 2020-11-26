@@ -666,7 +666,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         <xs:element name="BANGDIEM" msprop:Generator_TableClassName="BANGDIEMDataTable" msprop:Generator_TableVarName="tableBANGDIEM" msprop:Generator_TablePropName="BANGDIEM" msprop:Generator_RowDeletingName="BANGDIEMRowDeleting" msprop:Generator_RowChangingName="BANGDIEMRowChanging" msprop:Generator_RowEvHandlerName="BANGDIEMRowChangeEventHandler" msprop:Generator_RowDeletedName="BANGDIEMRowDeleted" msprop:Generator_UserTableName="BANGDIEM" msprop:Generator_RowChangedName="BANGDIEMRowChanged" msprop:Generator_RowEvArgName="BANGDIEMRowChangeEvent" msprop:Generator_RowClassName="BANGDIEMRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IDBD" msprop:Generator_ColumnVarNameInTable="columnIDBD" msprop:Generator_ColumnPropNameInRow="IDBD" msprop:Generator_ColumnPropNameInTable="IDBDColumn" msprop:Generator_UserColumnName="IDBD" type="xs:long" />
+              <xs:element name="IDBD" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnIDBD" msprop:Generator_ColumnPropNameInRow="IDBD" msprop:Generator_ColumnPropNameInTable="IDBDColumn" msprop:Generator_UserColumnName="IDBD" type="xs:long" />
               <xs:element name="MAMH" msprop:Generator_ColumnVarNameInTable="columnMAMH" msprop:Generator_ColumnPropNameInRow="MAMH" msprop:Generator_ColumnPropNameInTable="MAMHColumn" msprop:Generator_UserColumnName="MAMH">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -697,7 +697,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         <xs:element name="BODE" msprop:Generator_TableClassName="BODEDataTable" msprop:Generator_TableVarName="tableBODE" msprop:Generator_TablePropName="BODE" msprop:Generator_RowDeletingName="BODERowDeleting" msprop:Generator_RowChangingName="BODERowChanging" msprop:Generator_RowEvHandlerName="BODERowChangeEventHandler" msprop:Generator_RowDeletedName="BODERowDeleted" msprop:Generator_UserTableName="BODE" msprop:Generator_RowChangedName="BODERowChanged" msprop:Generator_RowEvArgName="BODERowChangeEvent" msprop:Generator_RowClassName="BODERow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CAUHOI" msprop:Generator_ColumnVarNameInTable="columnCAUHOI" msprop:Generator_ColumnPropNameInRow="CAUHOI" msprop:Generator_ColumnPropNameInTable="CAUHOIColumn" msprop:Generator_UserColumnName="CAUHOI" type="xs:int" />
+              <xs:element name="CAUHOI" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnCAUHOI" msprop:Generator_ColumnPropNameInRow="CAUHOI" msprop:Generator_ColumnPropNameInTable="CAUHOIColumn" msprop:Generator_UserColumnName="CAUHOI" type="xs:int" />
               <xs:element name="MAMH" msprop:Generator_ColumnVarNameInTable="columnMAMH" msprop:Generator_ColumnPropNameInRow="MAMH" msprop:Generator_ColumnPropNameInTable="MAMHColumn" msprop:Generator_UserColumnName="MAMH">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
