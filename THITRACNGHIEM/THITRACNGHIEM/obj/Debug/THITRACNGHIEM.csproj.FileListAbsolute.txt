@@ -311,3 +311,4 @@ E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\ru\DevExpress.Di
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmInDSGV.resources
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.XtraReport1.resources
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.XtraReport2.resources
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.rptXemKetQua.resources

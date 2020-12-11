@@ -51,7 +51,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.lOPBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.lOP1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lOP1TableAdapter = new THITRACNGHIEM.DSTableAdapters.LOP1TableAdapter();
+           
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingNavigator)).BeginInit();
@@ -113,7 +113,7 @@
             this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
             this.tableAdapterManager.GIAOVIENTableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
-            this.tableAdapterManager.LOP1TableAdapter = null;
+           
             this.tableAdapterManager.LOPTableAdapter = this.lOPTableAdapter;
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
@@ -251,7 +251,7 @@
             // 
             // lOP1TableAdapter
             // 
-            this.lOP1TableAdapter.ClearBeforeFill = true;
+            
             // 
             // frmInDSGV
             // 
@@ -299,6 +299,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton lOPBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource lOP1BindingSource;
-        private DSTableAdapters.LOP1TableAdapter lOP1TableAdapter;
+        
     }
 }
