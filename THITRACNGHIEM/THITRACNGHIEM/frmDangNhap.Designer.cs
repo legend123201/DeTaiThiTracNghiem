@@ -29,194 +29,246 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label tEN_COSOLabel;
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThoatDN = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnDN = new System.Windows.Forms.Button();
-            this.btnDangNhap = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmb_COSO = new System.Windows.Forms.ComboBox();
-            this.bds_DSPM = new System.Windows.Forms.BindingSource(this.components);
-            this.ds_V_DSPM = new THITRACNGHIEM.ds_V_DSPM();
+            System.Windows.Forms.Label tENCNLabel;
+            this.dS = new THITRACNGHIEM.DS();
+            this.cOSOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOSOTableAdapter = new THITRACNGHIEM.DSTableAdapters.COSOTableAdapter();
+            this.tableAdapterManager = new THITRACNGHIEM.DSTableAdapters.TableAdapterManager();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.rdbSV = new System.Windows.Forms.RadioButton();
+            this.rdbGV = new System.Windows.Forms.RadioButton();
+            this.cmbCoSo = new System.Windows.Forms.ComboBox();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_DSPHANMANH = new THITRACNGHIEM.ds_V_DSPM();
+            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLogin = new DevExpress.XtraEditors.TextEdit();
+            this.tableAdapterManager1 = new THITRACNGHIEM.ds_V_DSPMTableAdapters.TableAdapterManager();
             this.v_DS_PHANMANHTableAdapter = new THITRACNGHIEM.ds_V_DSPMTableAdapters.v_DS_PHANMANHTableAdapter();
-            this.tableAdapterManager = new THITRACNGHIEM.ds_V_DSPMTableAdapters.TableAdapterManager();
-            tEN_COSOLabel = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_DSPM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_V_DSPM)).BeginInit();
+            tENCNLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_DSPHANMANH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // tEN_COSOLabel
+            // tENCNLabel
             // 
-            tEN_COSOLabel.AutoSize = true;
-            tEN_COSOLabel.Location = new System.Drawing.Point(77, 60);
-            tEN_COSOLabel.Name = "tEN_COSOLabel";
-            tEN_COSOLabel.Size = new System.Drawing.Size(64, 22);
-            tEN_COSOLabel.TabIndex = 0;
-            tEN_COSOLabel.Text = "Cơ sở:";
+            tENCNLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            tENCNLabel.AutoSize = true;
+            tENCNLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tENCNLabel.Location = new System.Drawing.Point(313, 150);
+            tENCNLabel.Name = "tENCNLabel";
+            tENCNLabel.Size = new System.Drawing.Size(56, 21);
+            tENCNLabel.TabIndex = 13;
+            tENCNLabel.Text = "Cơ sở";
             // 
-            // groupBox1
+            // dS
             // 
-            this.groupBox1.Controls.Add(this.btnThoatDN);
-            this.groupBox1.Controls.Add(this.btnThoat);
-            this.groupBox1.Controls.Add(this.btnDN);
-            this.groupBox1.Controls.Add(this.btnDangNhap);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.txtLogin);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(tEN_COSOLabel);
-            this.groupBox1.Controls.Add(this.cmb_COSO);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(135, 50);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.groupBox1.Size = new System.Drawing.Size(618, 354);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnThoatDN
+            // cOSOBindingSource
             // 
-            this.btnThoatDN.Location = new System.Drawing.Point(367, 280);
-            this.btnThoatDN.Name = "btnThoatDN";
-            this.btnThoatDN.Size = new System.Drawing.Size(135, 40);
-            this.btnThoatDN.TabIndex = 7;
-            this.btnThoatDN.Text = "Thoát";
-            this.btnThoatDN.UseVisualStyleBackColor = true;
+            this.cOSOBindingSource.DataMember = "COSO";
+            this.cOSOBindingSource.DataSource = this.dS;
             // 
-            // btnThoat
+            // cOSOTableAdapter
             // 
-            this.btnThoat.Location = new System.Drawing.Point(367, 280);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(135, 40);
-            this.btnThoat.TabIndex = 7;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.cOSOTableAdapter.ClearBeforeFill = true;
             // 
-            // btnDN
+            // tableAdapterManager
             // 
-            this.btnDN.Location = new System.Drawing.Point(168, 280);
-            this.btnDN.Name = "btnDN";
-            this.btnDN.Size = new System.Drawing.Size(135, 40);
-            this.btnDN.TabIndex = 6;
-            this.btnDN.Text = "Đăng nhập";
-            this.btnDN.UseVisualStyleBackColor = true;
-            this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BANGDIEMTableAdapter = null;
+            this.tableAdapterManager.BODETableAdapter = null;
+            this.tableAdapterManager.COSOTableAdapter = this.cOSOTableAdapter;
+            this.tableAdapterManager.CT_BAITHITableAdapter = null;
+            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = THITRACNGHIEM.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.rdbSV);
+            this.groupControl1.Controls.Add(this.rdbGV);
+            this.groupControl1.Controls.Add(tENCNLabel);
+            this.groupControl1.Controls.Add(this.cmbCoSo);
+            this.groupControl1.Controls.Add(this.btnDangNhap);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.txtPassword);
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Controls.Add(this.txtLogin);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(932, 563);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // rdbSV
+            // 
+            this.rdbSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdbSV.AutoSize = true;
+            this.rdbSV.Location = new System.Drawing.Point(491, 90);
+            this.rdbSV.Name = "rdbSV";
+            this.rdbSV.Size = new System.Drawing.Size(84, 21);
+            this.rdbSV.TabIndex = 16;
+            this.rdbSV.TabStop = true;
+            this.rdbSV.Text = "Sinh viên";
+            this.rdbSV.UseVisualStyleBackColor = true;
+            this.rdbSV.CheckedChanged += new System.EventHandler(this.rdbSV_CheckedChanged);
+            // 
+            // rdbGV
+            // 
+            this.rdbGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdbGV.AutoSize = true;
+            this.rdbGV.Location = new System.Drawing.Point(376, 90);
+            this.rdbGV.Name = "rdbGV";
+            this.rdbGV.Size = new System.Drawing.Size(84, 21);
+            this.rdbGV.TabIndex = 15;
+            this.rdbGV.TabStop = true;
+            this.rdbGV.Text = "Giáo viên";
+            this.rdbGV.UseVisualStyleBackColor = true;
+            this.rdbGV.CheckedChanged += new System.EventHandler(this.rdbGV_CheckedChanged);
+            // 
+            // cmbCoSo
+            // 
+            this.cmbCoSo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbCoSo.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cmbCoSo.DisplayMember = "TEN_COSO";
+            this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCoSo.FormattingEnabled = true;
+            this.cmbCoSo.Location = new System.Drawing.Point(406, 147);
+            this.cmbCoSo.Name = "cmbCoSo";
+            this.cmbCoSo.Size = new System.Drawing.Size(156, 24);
+            this.cmbCoSo.TabIndex = 14;
+            this.cmbCoSo.ValueMember = "TEN_SERVER";
+            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged_1);
+            // 
+            // v_DS_PHANMANHBindingSource
+            // 
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.dS_DSPHANMANH;
+            // 
+            // dS_DSPHANMANH
+            // 
+            this.dS_DSPHANMANH.DataSetName = "DS_DSPHANMANH";
+            this.dS_DSPHANMANH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(168, 280);
+            this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDangNhap.Location = new System.Drawing.Point(437, 237);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(135, 40);
-            this.btnDangNhap.TabIndex = 6;
+            this.btnDangNhap.Size = new System.Drawing.Size(94, 29);
+            this.btnDangNhap.TabIndex = 13;
             this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click_1);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(317, 207);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(70, 20);
+            this.labelControl2.TabIndex = 12;
+            this.labelControl2.Text = "Password";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(194, 199);
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPassword.Location = new System.Drawing.Point(406, 208);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(336, 30);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(156, 22);
+            this.txtPassword.TabIndex = 11;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(317, 177);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(41, 20);
+            this.labelControl1.TabIndex = 10;
+            this.labelControl1.Text = "Login";
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(194, 128);
+            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLogin.Location = new System.Drawing.Point(406, 178);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(336, 30);
-            this.txtLogin.TabIndex = 4;
+            this.txtLogin.Size = new System.Drawing.Size(156, 22);
+            this.txtLogin.TabIndex = 9;
             // 
-            // label2
+            // tableAdapterManager1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 202);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Mật khẩu:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tài khoản:";
-            // 
-            // cmb_COSO
-            // 
-            this.cmb_COSO.DataSource = this.bds_DSPM;
-            this.cmb_COSO.DisplayMember = "TEN_COSO";
-            this.cmb_COSO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_COSO.FormattingEnabled = true;
-            this.cmb_COSO.Location = new System.Drawing.Point(194, 57);
-            this.cmb_COSO.Name = "cmb_COSO";
-            this.cmb_COSO.Size = new System.Drawing.Size(336, 30);
-            this.cmb_COSO.TabIndex = 1;
-            this.cmb_COSO.ValueMember = "TEN_SERVER";
-            this.cmb_COSO.SelectedIndexChanged += new System.EventHandler(this.cmb_COSO_SelectedIndexChanged);
-            // 
-            // bds_DSPM
-            // 
-            this.bds_DSPM.DataMember = "v_DS_PHANMANH";
-            this.bds_DSPM.DataSource = this.ds_V_DSPM;
-            // 
-            // ds_V_DSPM
-            // 
-            this.ds_V_DSPM.DataSetName = "ds_V_DSPM";
-            this.ds_V_DSPM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = THITRACNGHIEM.ds_V_DSPMTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // v_DS_PHANMANHTableAdapter
             // 
             this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.UpdateOrder = THITRACNGHIEM.ds_V_DSPMTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 445);
-            this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ClientSize = new System.Drawing.Size(932, 563);
+            this.Controls.Add(this.groupControl1);
+            this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDangNhap";
-            this.Text = "frmDangNhap";
+            this.Text = "Đăng nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_DSPM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_V_DSPM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_DSPHANMANH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private ds_V_DSPM ds_V_DSPM;
-        private System.Windows.Forms.BindingSource bds_DSPM;
+        private DS dS;
+        private System.Windows.Forms.BindingSource cOSOBindingSource;
+        private DSTableAdapters.COSOTableAdapter cOSOTableAdapter;
+        private DSTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton btnDangNhap;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtPassword;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtLogin;
+        private ds_V_DSPMTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.ComboBox cmbCoSo;
+        private ds_V_DSPM dS_DSPHANMANH;
+        private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
         private ds_V_DSPMTableAdapters.v_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
-        private ds_V_DSPMTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ComboBox cmb_COSO;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnThoatDN;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnDN;
-        private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.RadioButton rdbSV;
+        private System.Windows.Forms.RadioButton rdbGV;
     }
 }

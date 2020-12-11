@@ -343,6 +343,7 @@
             this.gcLop.TabIndex = 6;
             this.gcLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gcLop.Click += new System.EventHandler(this.gcLop_Click);
             // 
             // gridView2
             // 

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Data;
+using DevExpress.UserSkins;
+using DevExpress.Skins;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace THITRACNGHIEM
 {
@@ -12,6 +14,7 @@ namespace THITRACNGHIEM
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataReader myReader;
@@ -28,9 +31,25 @@ namespace THITRACNGHIEM
         public static String mGroup = "";
         public static String mHoten = "";
         public static int mCoso = 0;
+        public static String mMaCS = "";
+        public static Form frmMain1 = null;
+
+        // luu thong tin thi
+        public static string maMH;
+        public static string trinhDo;
+        public static string soCau;
+        public static int thoiGian;
+        public static int lanThi;
+        public static string ngayThi;
+
+        // luu thong tin SV
+        public static bool isSinhVien;
+        public static string maLopSV;
+        public static string ngaySinhSV;
+        public static string diaChiSV;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
-        public static frmMain frmChinh;
+        //public static frmMain frmChinh;
 
         public static int KetNoi()
         {
@@ -48,24 +67,21 @@ namespace THITRACNGHIEM
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n" + e.Message, "", MessageBoxButtons.OK);
                 return 0;
             }
         }
-
         //trả về data chỉ cho xem, nếu có nhiều dòng chỉ cho đi xuống, dùng cho in báo cáo là hợp lý
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
             SqlDataReader myreader;
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
             sqlcmd.CommandType = CommandType.Text;
-            //tối đa cho đợi 10p, tgian tính bằng s
-            sqlcmd.CommandTimeout = 600;
-            // Kiểm tra trạng thái đóng hay mở
             if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
             try
             {
-                myreader = sqlcmd.ExecuteReader(); return myreader;
+                myreader = sqlcmd.ExecuteReader(); 
+                return myreader;
 
             }
             catch (SqlException ex)
@@ -75,7 +91,6 @@ namespace THITRACNGHIEM
                 return null;
             }
         }
-
         //khi muốn tải dữ liệu về rồi sửa rồi update db
         public static DataTable ExecSqlDataTable(String cmd)
         {
@@ -86,7 +101,6 @@ namespace THITRACNGHIEM
             conn.Close();
             return dt;
         }
-
         //sử dụng để thi hành sp, view, câu lệnh nhưng ko cần data trả về, chỉ cần mã lỗi thôi
         public static int ExecSqlNonQuery(String strlenh)
         {
@@ -96,7 +110,8 @@ namespace THITRACNGHIEM
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                Sqlcmd.ExecuteNonQuery(); conn.Close();
+                Sqlcmd.ExecuteNonQuery(); 
+                conn.Close();
                 return 0;
             }
             catch (SqlException ex)
@@ -108,14 +123,14 @@ namespace THITRACNGHIEM
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
         }
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmChinh = new frmMain();
-            Application.Run(frmChinh);
-            //Application.Run(new frmDangNhap()); 
+            frmMain1 = new frmMain();
+            Application.Run(frmMain1);
         }
     }
 }

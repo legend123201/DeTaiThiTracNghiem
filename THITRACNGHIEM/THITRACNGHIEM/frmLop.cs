@@ -180,5 +180,10 @@ namespace THITRACNGHIEM
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = btnHuy.Enabled = true;
         }
+
+        private void gcLop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
