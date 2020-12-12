@@ -42,6 +42,7 @@
             this.btnCBThi = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongTinSV = new DevExpress.XtraBars.BarButtonItem();
             this.btnChonMonThi = new DevExpress.XtraBars.BarButtonItem();
+            this.inDSGV = new DevExpress.XtraBars.BarButtonItem();
             this.rbbHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbbDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -55,7 +56,9 @@
             this.lblMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNhom = new System.Windows.Forms.ToolStripStatusLabel();
-            this.inDSGV = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnXemKQ = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.sttTrangThai.SuspendLayout();
@@ -78,15 +81,17 @@
             this.btnCBThi,
             this.btnThongTinSV,
             this.btnChonMonThi,
-            this.inDSGV});
+            this.inDSGV,
+            this.btnXemKQ});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbbHeThong,
             this.rbbDanhMuc,
-            this.rbbThi});
+            this.rbbThi,
+            this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(1294, 193);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -178,6 +183,15 @@
             this.btnChonMonThi.Name = "btnChonMonThi";
             this.btnChonMonThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChonMonThi_ItemClick);
             // 
+            // inDSGV
+            // 
+            this.inDSGV.Caption = "In DSGV";
+            this.inDSGV.Id = 12;
+            this.inDSGV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inDSGV.ImageOptions.Image")));
+            this.inDSGV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("inDSGV.ImageOptions.LargeImage")));
+            this.inDSGV.Name = "inDSGV";
+            this.inDSGV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.inDSGV_ItemClick);
+            // 
             // rbbHeThong
             // 
             this.rbbHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -267,14 +281,27 @@
             this.lblNhom.Size = new System.Drawing.Size(151, 20);
             this.lblNhom.Text = "toolStripStatusLabel1";
             // 
-            // inDSGV
+            // ribbonPage1
             // 
-            this.inDSGV.Caption = "In DSGV";
-            this.inDSGV.Id = 12;
-            this.inDSGV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inDSGV.ImageOptions.Image")));
-            this.inDSGV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("inDSGV.ImageOptions.LargeImage")));
-            this.inDSGV.Name = "inDSGV";
-            this.inDSGV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.inDSGV_ItemClick);
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Report";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnXemKQ);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
+            // 
+            // btnXemKQ
+            // 
+            this.btnXemKQ.Caption = "Xem kết quả";
+            this.btnXemKQ.Id = 13;
+            this.btnXemKQ.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemKQ.ImageOptions.Image")));
+            this.btnXemKQ.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemKQ.ImageOptions.LargeImage")));
+            this.btnXemKQ.Name = "btnXemKQ";
+            this.btnXemKQ.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemKQ_ItemClick);
             // 
             // frmMain
             // 
@@ -328,6 +355,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem inDSGV;
+        private DevExpress.XtraBars.BarButtonItem btnXemKQ;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }
 

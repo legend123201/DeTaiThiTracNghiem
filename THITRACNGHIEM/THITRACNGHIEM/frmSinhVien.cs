@@ -248,6 +248,11 @@ namespace THITRACNGHIEM
             }
         }
 
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (Program.mGroup == "TRUONG" || Program.mGroup == "GIAOVIEN")

@@ -278,5 +278,18 @@ namespace THITRACNGHIEM
                 f.Show();
             }
         }
+
+        private void btnXemKQ_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmXemKetQua));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                frmXemKetQua f = new frmXemKetQua();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
