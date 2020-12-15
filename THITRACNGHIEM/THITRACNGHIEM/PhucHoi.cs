@@ -53,9 +53,10 @@ namespace THITRACNGHIEM
             myStack.Push("exec [dbo].[SP_PhucHoiThemBD] " + newMaCauHoi.ToString());
         }
 
-        public void PushStack_XoaBD(int maCauHoi, string maGV, string maMH, string trinhDo, string noiDung, string A, string B, string C, string D, string dapAn)
+        public void PushStack_XoaBD(string maGV, string maMH, string trinhDo, string noiDung, string A, string B, string C, string D, string dapAn)
         {
-            myStack.Push("exec [dbo].[SP_PhucHoiXoaBD] "+ maCauHoi.ToString() + ", '" + maGV + "', '" + maMH + "', '" + trinhDo + "', N'" + noiDung + "', N'" + A + "', N'" + B + "', N'" + C + "', N'" + D + "', '" + dapAn + "'");
+            myStack.Push("exec [dbo].[SP_PhucHoiXoaBD] '" + maGV + "', '" + maMH + "', '" + trinhDo + "', N'" + noiDung + "', N'" + A + "', N'" + B + "', N'" + C + "', N'" + D + "', '" + dapAn + "'");
+            //myStack.Push("exec [dbo].[SP_PhucHoiXoaBD] " + maCauHoi.ToString() + ", '" + maGV + "', '" + maMH + "', '" + trinhDo + "', N'" + noiDung + "', N'" + A + "', N'" + B + "', N'" + C + "', N'" + D + "', '" + dapAn + "'");
         }
 
         public void Save_OldBD(string oldMaGV, string oldMaMH, string oldTrinhDo, string oldNoiDung, string oldA, string oldB, string oldC, string oldD, string oldDapAn)

@@ -108,7 +108,8 @@
             // mASVLabel
             // 
             mASVLabel.AutoSize = true;
-            mASVLabel.Location = new System.Drawing.Point(37, 59);
+            mASVLabel.Location = new System.Drawing.Point(46, 74);
+            mASVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mASVLabel.Name = "mASVLabel";
             mASVLabel.Size = new System.Drawing.Size(50, 17);
             mASVLabel.TabIndex = 0;
@@ -117,7 +118,8 @@
             // hOLabel
             // 
             hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(326, 59);
+            hOLabel.Location = new System.Drawing.Point(408, 74);
+            hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             hOLabel.Name = "hOLabel";
             hOLabel.Size = new System.Drawing.Size(30, 17);
             hOLabel.TabIndex = 2;
@@ -126,7 +128,8 @@
             // tENLabel
             // 
             tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(598, 59);
+            tENLabel.Location = new System.Drawing.Point(748, 74);
+            tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tENLabel.Name = "tENLabel";
             tENLabel.Size = new System.Drawing.Size(36, 17);
             tENLabel.TabIndex = 4;
@@ -135,7 +138,8 @@
             // nGAYSINHLabel
             // 
             nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(326, 101);
+            nGAYSINHLabel.Location = new System.Drawing.Point(408, 126);
+            nGAYSINHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nGAYSINHLabel.Name = "nGAYSINHLabel";
             nGAYSINHLabel.Size = new System.Drawing.Size(73, 17);
             nGAYSINHLabel.TabIndex = 6;
@@ -144,7 +148,8 @@
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(326, 141);
+            dIACHILabel.Location = new System.Drawing.Point(408, 176);
+            dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dIACHILabel.Name = "dIACHILabel";
             dIACHILabel.Size = new System.Drawing.Size(53, 17);
             dIACHILabel.TabIndex = 8;
@@ -153,7 +158,8 @@
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(327, 180);
+            mALOPLabel.Location = new System.Drawing.Point(409, 225);
+            mALOPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(52, 17);
             mALOPLabel.TabIndex = 10;
@@ -162,7 +168,8 @@
             // mACSLabel
             // 
             mACSLabel.AutoSize = true;
-            mACSLabel.Location = new System.Drawing.Point(14, 51);
+            mACSLabel.Location = new System.Drawing.Point(18, 64);
+            mACSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mACSLabel.Name = "mACSLabel";
             mACSLabel.Size = new System.Drawing.Size(43, 17);
             mACSLabel.TabIndex = 0;
@@ -171,7 +178,8 @@
             // mALOPLabel1
             // 
             mALOPLabel1.AutoSize = true;
-            mALOPLabel1.Location = new System.Drawing.Point(216, 51);
+            mALOPLabel1.Location = new System.Drawing.Point(270, 64);
+            mALOPLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mALOPLabel1.Name = "mALOPLabel1";
             mALOPLabel1.Size = new System.Drawing.Size(47, 17);
             mALOPLabel1.TabIndex = 15;
@@ -330,8 +338,9 @@
             this.groupControl1.Controls.Add(mACSLabel);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 51);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1198, 99);
+            this.groupControl1.Size = new System.Drawing.Size(1198, 124);
             this.groupControl1.TabIndex = 14;
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
@@ -340,9 +349,10 @@
             this.cmbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSinhVien, "MALOP", true));
             this.cmbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaLop.FormattingEnabled = true;
-            this.cmbMaLop.Location = new System.Drawing.Point(278, 48);
+            this.cmbMaLop.Location = new System.Drawing.Point(348, 60);
+            this.cmbMaLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbMaLop.Name = "cmbMaLop";
-            this.cmbMaLop.Size = new System.Drawing.Size(121, 24);
+            this.cmbMaLop.Size = new System.Drawing.Size(150, 24);
             this.cmbMaLop.TabIndex = 16;
             this.cmbMaLop.SelectedIndexChanged += new System.EventHandler(this.cmbMaLop_SelectedIndexChanged);
             // 
@@ -360,9 +370,10 @@
             // 
             this.cmbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCoSo.FormattingEnabled = true;
-            this.cmbCoSo.Location = new System.Drawing.Point(63, 48);
+            this.cmbCoSo.Location = new System.Drawing.Point(79, 60);
+            this.cmbCoSo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(121, 24);
+            this.cmbCoSo.Size = new System.Drawing.Size(150, 24);
             this.cmbCoSo.TabIndex = 15;
             this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
@@ -393,11 +404,13 @@
             // 
             this.gcSinhVien.DataSource = this.bdsSinhVien;
             this.gcSinhVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcSinhVien.Location = new System.Drawing.Point(0, 150);
+            this.gcSinhVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcSinhVien.Location = new System.Drawing.Point(0, 175);
             this.gcSinhVien.MainView = this.gridView1;
+            this.gcSinhVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcSinhVien.MenuManager = this.barManager1;
             this.gcSinhVien.Name = "gcSinhVien";
-            this.gcSinhVien.Size = new System.Drawing.Size(1198, 226);
+            this.gcSinhVien.Size = new System.Drawing.Size(1198, 282);
             this.gcSinhVien.TabIndex = 15;
             this.gcSinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -495,69 +508,76 @@
             this.groupControl2.Controls.Add(mASVLabel);
             this.groupControl2.Controls.Add(this.txtMaSV);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 376);
+            this.groupControl2.Location = new System.Drawing.Point(0, 457);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1198, 346);
+            this.groupControl2.Size = new System.Drawing.Size(1198, 265);
             this.groupControl2.TabIndex = 16;
             // 
             // txtMaLop
             // 
             this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "MALOP", true));
-            this.txtMaLop.Location = new System.Drawing.Point(409, 177);
+            this.txtMaLop.Location = new System.Drawing.Point(511, 221);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaLop.MenuManager = this.barManager1;
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Properties.ReadOnly = true;
-            this.txtMaLop.Size = new System.Drawing.Size(125, 22);
+            this.txtMaLop.Size = new System.Drawing.Size(156, 22);
             this.txtMaLop.TabIndex = 12;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(409, 136);
+            this.txtDiaChi.Location = new System.Drawing.Point(511, 170);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiaChi.MenuManager = this.barManager1;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(364, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(455, 22);
             this.txtDiaChi.TabIndex = 9;
             // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "NGAYSINH", true));
             this.dtpNgaySinh.EditValue = null;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(409, 98);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(511, 122);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpNgaySinh.MenuManager = this.barManager1;
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpNgaySinh.Size = new System.Drawing.Size(125, 22);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(156, 22);
             this.dtpNgaySinh.TabIndex = 7;
             // 
             // txtTen
             // 
             this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "TEN", true));
-            this.txtTen.Location = new System.Drawing.Point(642, 56);
+            this.txtTen.Location = new System.Drawing.Point(802, 70);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTen.MenuManager = this.barManager1;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(125, 22);
+            this.txtTen.Size = new System.Drawing.Size(156, 22);
             this.txtTen.TabIndex = 5;
             // 
             // txtHo
             // 
             this.txtHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "HO", true));
-            this.txtHo.Location = new System.Drawing.Point(409, 56);
+            this.txtHo.Location = new System.Drawing.Point(511, 70);
+            this.txtHo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHo.MenuManager = this.barManager1;
             this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(125, 22);
+            this.txtHo.Size = new System.Drawing.Size(156, 22);
             this.txtHo.TabIndex = 3;
             // 
             // txtMaSV
             // 
             this.txtMaSV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSinhVien, "MASV", true));
-            this.txtMaSV.Location = new System.Drawing.Point(90, 56);
+            this.txtMaSV.Location = new System.Drawing.Point(112, 70);
+            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaSV.MenuManager = this.barManager1;
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(125, 22);
+            this.txtMaSV.Size = new System.Drawing.Size(156, 22);
             this.txtMaSV.TabIndex = 1;
             // 
             // bdsBangDiem

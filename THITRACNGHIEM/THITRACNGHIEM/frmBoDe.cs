@@ -68,7 +68,7 @@ namespace THITRACNGHIEM
                     try
                     {
                         
-                        phucHoi.PushStack_XoaBD(int.Parse(spinMaCauHoi.Text), txtMaGV.Text, txtMaMH.Text, cmb_TrinhDo.Text, txtNoiDung.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, cmb_DapAn.Text);
+                        phucHoi.PushStack_XoaBD(txtMaGV.Text, txtMaMH.Text, cmb_TrinhDo.Text, txtNoiDung.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, cmb_DapAn.Text);
                         bds_BoDe.RemoveCurrent();
                         /*this.mONHOCTableAdapter.Update(this.dS.MONHOC);*/
                         this.bODETableAdapter.Update(this.dS.BODE);
@@ -102,6 +102,7 @@ namespace THITRACNGHIEM
             groupBox1.Enabled = true;
             btnGhi.Enabled = btnHuy.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnPhucHoi.Enabled = btnThoat.Enabled = false;
+
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -205,21 +206,21 @@ namespace THITRACNGHIEM
                         return;
                     }
 
-                    sql = "exec [dbo].[SP_TrungMaCauHoi] '" + spinMaCauHoi.Text + "'";
+                    /*sql = "exec [dbo].[SP_TrungMaCauHoi] '" + spinMaCauHoi.Text + "'";
                     ketQua = Program.ExecSqlNonQuery(sql);
                     //nếu như chạy sp ko thành công
                     if (ketQua == 1)
                     {
                         txtMaMH.Focus();
                         return;
-                    }
+                    }*/
                 }
                 //isDangSua = true
                 else
                 {
                     string[] oldBD = phucHoi.GetDataTruocKhiSua().Split('/');
 
-                    if (txtMaMH.Text != oldBD[2])
+                    if (txtMaMH.Text != oldBD[1])
                     {
                         sql = "exec [dbo].[SP_TonTaiMaMH] '" + txtMaMH.Text + "'";
                         ketQua = Program.ExecSqlNonQuery(sql);
@@ -231,7 +232,7 @@ namespace THITRACNGHIEM
                         }
                     }
 
-                    if (spinMaCauHoi.Text != oldBD[0])
+                    /*if (spinMaCauHoi.Text != oldBD[0])
                     {
                         sql = "exec [dbo].[SP_TrungMaCauHoi] '" + spinMaCauHoi.Text + "'";
                         ketQua = Program.ExecSqlNonQuery(sql);
@@ -241,7 +242,7 @@ namespace THITRACNGHIEM
                             txtMaMH.Focus();
                             return;
                         }
-                    }
+                    }*/
                 }
 
                 //nếu như không trùng gì hết
@@ -258,7 +259,7 @@ namespace THITRACNGHIEM
                     isDangSua = false;
                 }
                 bds_BoDe.EndEdit();
-                bds_BoDe.ResetCurrentItem(); //chọn item vừa thêm là vị trí hiện tại đang trỏ tới
+                //bds_BoDe.ResetCurrentItem(); //chọn item vừa thêm là vị trí hiện tại đang trỏ tới
                 //this.mONHOCTableAdapter.Update(this.dS.MONHOC);
                 this.bODETableAdapter.Update(this.dS.BODE);
 
@@ -288,6 +289,11 @@ namespace THITRACNGHIEM
             {
                 MessageBox.Show(ketQua, "Thông báo", MessageBoxButtons.OK);
             }
+        }
+
+        private void gc_BoDe_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

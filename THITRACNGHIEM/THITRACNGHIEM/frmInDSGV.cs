@@ -22,7 +22,7 @@ namespace THITRACNGHIEM
         {
             XtraReport2 RP = new XtraReport2();
             RP.label1.Text = "luu";
-       
+             
             ReportPrintTool print = new ReportPrintTool(RP);
             print.ShowPreviewDialog();
 

@@ -382,14 +382,17 @@
             // 
             this.gc_BoDe.DataSource = this.bds_BoDe;
             this.gc_BoDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gc_BoDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gc_BoDe.Location = new System.Drawing.Point(0, 51);
             this.gc_BoDe.MainView = this.gv_BoDe;
+            this.gc_BoDe.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gc_BoDe.MenuManager = this.barManager1;
             this.gc_BoDe.Name = "gc_BoDe";
-            this.gc_BoDe.Size = new System.Drawing.Size(1924, 261);
+            this.gc_BoDe.Size = new System.Drawing.Size(1924, 242);
             this.gc_BoDe.TabIndex = 5;
             this.gc_BoDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_BoDe});
+            this.gc_BoDe.Click += new System.EventHandler(this.gc_BoDe_Click);
             // 
             // gv_BoDe
             // 
@@ -613,9 +616,9 @@
             this.groupBox1.Controls.Add(tRINHDOLabel);
             this.groupBox1.Controls.Add(this.cmb_TrinhDo);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 312);
+            this.groupBox1.Location = new System.Drawing.Point(0, 293);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1924, 580);
+            this.groupBox1.Size = new System.Drawing.Size(1924, 599);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -628,6 +631,7 @@
             0,
             0,
             0});
+            this.spinMaCauHoi.Enabled = false;
             this.spinMaCauHoi.Location = new System.Drawing.Point(185, 94);
             this.spinMaCauHoi.MenuManager = this.barManager1;
             this.spinMaCauHoi.Name = "spinMaCauHoi";
