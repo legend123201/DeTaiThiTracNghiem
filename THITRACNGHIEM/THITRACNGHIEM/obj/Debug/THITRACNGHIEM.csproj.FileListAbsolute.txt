@@ -315,3 +315,4 @@ E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.rp
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmXemKetQua.resources
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmXemBangDiem.resources
 E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.rptXemBangDiem.resources
+E:\Git\DeTaiThiTracNghiem\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.rptXemKetQua2.resources

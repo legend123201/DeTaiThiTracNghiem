@@ -73,9 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CauHoi.cs" />
-    <Compile Include="DS.cs">
-      <DependentUpon>DS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +200,12 @@
     <Compile Include="PhucHoi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptXemKetQua2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptXemKetQua2.Designer.cs">
+      <DependentUpon>rptXemKetQua2.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -282,6 +285,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptXemKetQua2.resx">
+      <DependentUpon>rptXemKetQua2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
