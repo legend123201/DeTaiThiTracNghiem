@@ -35,6 +35,8 @@
             this.cOSOTableAdapter = new THITRACNGHIEM.DSTableAdapters.COSOTableAdapter();
             this.tableAdapterManager = new THITRACNGHIEM.DSTableAdapters.TableAdapterManager();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.rdbSV = new System.Windows.Forms.RadioButton();
+            this.rdbGV = new System.Windows.Forms.RadioButton();
             this.cmbCoSo = new System.Windows.Forms.ComboBox();
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_DSPHANMANH = new THITRACNGHIEM.DS_DSPHANMANH();
@@ -45,8 +47,6 @@
             this.txtLogin = new DevExpress.XtraEditors.TextEdit();
             this.tableAdapterManager1 = new THITRACNGHIEM.DS_DSPHANMANHTableAdapters.TableAdapterManager();
             this.v_DS_PHANMANHTableAdapter = new THITRACNGHIEM.DS_DSPHANMANHTableAdapters.V_DS_PHANMANHTableAdapter();
-            this.rdbGV = new System.Windows.Forms.RadioButton();
-            this.rdbSV = new System.Windows.Forms.RadioButton();
             tENCNLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).BeginInit();
@@ -114,6 +114,33 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(932, 563);
             this.groupControl1.TabIndex = 0;
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // rdbSV
+            // 
+            this.rdbSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdbSV.AutoSize = true;
+            this.rdbSV.Location = new System.Drawing.Point(491, 90);
+            this.rdbSV.Name = "rdbSV";
+            this.rdbSV.Size = new System.Drawing.Size(84, 21);
+            this.rdbSV.TabIndex = 16;
+            this.rdbSV.TabStop = true;
+            this.rdbSV.Text = "Sinh viên";
+            this.rdbSV.UseVisualStyleBackColor = true;
+            this.rdbSV.CheckedChanged += new System.EventHandler(this.rdbSV_CheckedChanged);
+            // 
+            // rdbGV
+            // 
+            this.rdbGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdbGV.AutoSize = true;
+            this.rdbGV.Location = new System.Drawing.Point(376, 90);
+            this.rdbGV.Name = "rdbGV";
+            this.rdbGV.Size = new System.Drawing.Size(84, 21);
+            this.rdbGV.TabIndex = 15;
+            this.rdbGV.TabStop = true;
+            this.rdbGV.Text = "Giáo viên";
+            this.rdbGV.UseVisualStyleBackColor = true;
+            this.rdbGV.CheckedChanged += new System.EventHandler(this.rdbGV_CheckedChanged);
             // 
             // cmbCoSo
             // 
@@ -199,32 +226,6 @@
             // v_DS_PHANMANHTableAdapter
             // 
             this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
-            // 
-            // rdbGV
-            // 
-            this.rdbGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rdbGV.AutoSize = true;
-            this.rdbGV.Location = new System.Drawing.Point(376, 90);
-            this.rdbGV.Name = "rdbGV";
-            this.rdbGV.Size = new System.Drawing.Size(84, 21);
-            this.rdbGV.TabIndex = 15;
-            this.rdbGV.TabStop = true;
-            this.rdbGV.Text = "Giáo viên";
-            this.rdbGV.UseVisualStyleBackColor = true;
-            this.rdbGV.CheckedChanged += new System.EventHandler(this.rdbGV_CheckedChanged);
-            // 
-            // rdbSV
-            // 
-            this.rdbSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rdbSV.AutoSize = true;
-            this.rdbSV.Location = new System.Drawing.Point(491, 90);
-            this.rdbSV.Name = "rdbSV";
-            this.rdbSV.Size = new System.Drawing.Size(84, 21);
-            this.rdbSV.TabIndex = 16;
-            this.rdbSV.TabStop = true;
-            this.rdbSV.Text = "Sinh viên";
-            this.rdbSV.UseVisualStyleBackColor = true;
-            this.rdbSV.CheckedChanged += new System.EventHandler(this.rdbSV_CheckedChanged);
             // 
             // frmDangNhap
             // 

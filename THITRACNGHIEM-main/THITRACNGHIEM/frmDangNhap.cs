@@ -149,5 +149,10 @@ namespace THITRACNGHIEM
             Program.isSinhVien = false;
             txtPassword.Enabled = true;
         }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
